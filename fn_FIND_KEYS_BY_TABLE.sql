@@ -29,8 +29,10 @@ module_tables_foreign_key as
  ),
  z as 
  (
-	 select * from module_tables_primary_key
+	 select *, NULL as PRIMARY_TABLE, NULL as PRIMARY_COLUMN from module_tables_primary_key
 	 union all
-	 select * from module_tables_foreign_key
+	 select a.*, ss.PrimaryTableName as PRIMARY_TABLE, ss.PrimaryFieldName as PRIMARY_COLUMN  from module_tables_foreign_key a
+		inner join [CompanyMerge].[dbo].[Vw_PrimaryForeignRelationshipSummary] [ss] ON 
+		a.REFERENCE_TABLE_NAME = ss.ForeignTableName AND a.COLUMN_NAME = ss.ForeignFieldName
  )
-  select distinct * from z order by MODULE_TABLE_NAME, REFERENCE, REFERENCE_TABLE_NAME, COLUMN_NAME
+  select distinct MODULE_TABLE_NAME, PRIMARY_TABLE, PRIMARY_COLUMN, REFERENCE, REFERENCE_TABLE_NAME, COLUMN_NAME from z order by MODULE_TABLE_NAME, REFERENCE, REFERENCE_TABLE_NAME, COLUMN_NAME

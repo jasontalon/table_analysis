@@ -1,0 +1,14 @@
+version: '3'
+services: 
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-CU8-ubuntu-16.04
+    user: root
+    ports:
+      - "9433:1433"
+    volumes:
+      - ./db/.mssql/data:/var/opt/mssql/data
+      - ./db/.mssql/log:/var/opt/mssql/log
+      - ./db/.mssql/secrets:/var/opt/mssql/secrets
+    environment: 
+      SA_PASSWORD: "Password123!"
+      ACCEPT_EULA: Y

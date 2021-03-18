@@ -1,0 +1,3164 @@
+CREATE DATABASE [TWO]
+GO
+
+/****** Object:  Table [dbo].[NCABR503]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR503](
+	[NC_TaskId] [char](11) NOT NULL,
+	[LNITMSEQ] [int] NOT NULL,
+	[BCHSOURC] [char](15) NOT NULL,
+	[BACHNUMB] [char](15) NOT NULL,
+	[NC_Task_Criteria_BatchNo] [smallint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR503] PRIMARY KEY NONCLUSTERED 
+(
+	[NC_TaskId] ASC,
+	[LNITMSEQ] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR502]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR502](
+	[NC_TaskId] [char](11) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR502] PRIMARY KEY NONCLUSTERED 
+(
+	[NC_TaskId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR501]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR501](
+	[LNITMSEQ] [int] NOT NULL,
+	[NC_TaskType] [char](11) NOT NULL,
+	[NC_TaskId] [char](11) NOT NULL,
+	[NC_TaskDesc] [char](51) NOT NULL,
+	[NC_TaskEnabled] [tinyint] NOT NULL,
+	[NC_TaskRunMonday] [tinyint] NOT NULL,
+	[NC_TaskRunTuesday] [tinyint] NOT NULL,
+	[NC_TaskRunWednesday] [tinyint] NOT NULL,
+	[NC_TaskRunThursday] [tinyint] NOT NULL,
+	[NC_TaskRunFriday] [tinyint] NOT NULL,
+	[NC_TaskRunSaturday] [tinyint] NOT NULL,
+	[NC_TaskRunSunday] [tinyint] NOT NULL,
+	[NC_TaskStartTime] [datetime] NOT NULL,
+	[NC_TaskFinishTime] [datetime] NOT NULL,
+	[NC_TaskRecurringEnabled] [tinyint] NOT NULL,
+	[NC_TaskRunEveryNMins] [smallint] NOT NULL,
+	[NC_TaskLastRunDate] [datetime] NOT NULL,
+	[NC_TaskLastRunTime] [datetime] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR501] PRIMARY KEY CLUSTERED 
+(
+	[NC_TaskType] ASC,
+	[LNITMSEQ] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR500]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR500](
+	[SETUPKEY] [smallint] NOT NULL,
+	[NC_TaskType] [char](11) NOT NULL,
+	[NC_TaskTypeDesc] [char](51) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR500] PRIMARY KEY CLUSTERED 
+(
+	[SETUPKEY] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR036]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR036](
+	[USERID] [char](15) NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[ERMSGTXT] [char](255) NOT NULL,
+	[SEQNUMBR] [int] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR036] PRIMARY KEY CLUSTERED 
+(
+	[USERID] ASC,
+	[BANKID] ASC,
+	[SEQNUMBR] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR413]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR413](
+	[BANKID] [char](15) NOT NULL,
+	[NC_Trx_Type] [char](9) NOT NULL,
+	[NC_Reference] [char](31) NOT NULL,
+	[NC_Bank_Trx_Type] [smallint] NOT NULL,
+	[NC_Balancing_Account_Idx] [int] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR413] PRIMARY KEY NONCLUSTERED 
+(
+	[BANKID] ASC,
+	[NC_Trx_Type] ASC,
+	[NC_Reference] ASC,
+	[NC_Bank_Trx_Type] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR222]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR222](
+	[SEQNUMBR] [int] NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[depositnumber] [char](21) NOT NULL,
+	[NC_Deposit_Group_ID] [char](21) NOT NULL,
+	[DATE1] [datetime] NOT NULL,
+	[TIME1] [datetime] NOT NULL,
+	[USERID] [char](15) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+	[NC_Error_Text] [text] NOT NULL,
+ CONSTRAINT [PKNCABR222] PRIMARY KEY NONCLUSTERED 
+(
+	[DEX_ROW_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR412]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR412](
+	[BANKID] [char](15) NOT NULL,
+	[NC_Statement_Number] [int] NOT NULL,
+	[LNITMSEQ] [int] NOT NULL,
+	[NC_String_10_1] [char](11) NOT NULL,
+	[NC_String_10_2] [char](11) NOT NULL,
+	[NC_String_10_3] [char](11) NOT NULL,
+	[NC_String_10_4] [char](11) NOT NULL,
+	[NC_String_30_1] [char](31) NOT NULL,
+	[NC_String_30_2] [char](31) NOT NULL,
+	[NC_String_30_3] [char](31) NOT NULL,
+	[NC_String_30_4] [char](31) NOT NULL,
+	[NC_String_30_5] [char](31) NOT NULL,
+	[NC_String_30_6] [char](31) NOT NULL,
+	[NC_String_80_1] [char](81) NOT NULL,
+	[NC_String_80_2] [char](81) NOT NULL,
+	[NC_LongInt_1] [int] NOT NULL,
+	[NC_LongInt_2] [int] NOT NULL,
+	[NC_LongInt_3] [int] NOT NULL,
+	[NC_LongInt_4] [int] NOT NULL,
+	[NC_LongInt_5] [int] NOT NULL,
+	[NC_LongInt_6] [int] NOT NULL,
+	[NC_Dollar_1] [numeric](19, 5) NOT NULL,
+	[NC_Dollar_2] [numeric](19, 5) NOT NULL,
+	[NC_Date8] [datetime] NOT NULL,
+	[ACTINDX] [int] NOT NULL,
+	[NC_Long_String_1] [char](255) NOT NULL,
+	[NC_Long_String_2] [char](255) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR412] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC,
+	[NC_Statement_Number] ASC,
+	[LNITMSEQ] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR411]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR411](
+	[SETUPKEY] [smallint] NOT NULL,
+	[USRDFPR1] [char](15) NOT NULL,
+	[USRDRP10] [char](15) NOT NULL,
+	[USRDRP11] [char](15) NOT NULL,
+	[USRDRP12] [char](15) NOT NULL,
+	[USRDFPR13] [char](15) NOT NULL,
+	[USRDFPR14] [char](15) NOT NULL,
+	[USRDFPR15] [char](15) NOT NULL,
+	[USRDRPR2] [char](15) NOT NULL,
+	[USRDRPR3] [char](15) NOT NULL,
+	[USRDRPR4] [char](15) NOT NULL,
+	[USRDRPR5] [char](15) NOT NULL,
+	[USRDRPR6] [char](15) NOT NULL,
+	[USRDRPR7] [char](15) NOT NULL,
+	[USRDRPR8] [char](15) NOT NULL,
+	[USRDRPR9] [char](15) NOT NULL,
+	[NC_Import_1] [tinyint] NOT NULL,
+	[NC_Import_2] [tinyint] NOT NULL,
+	[NC_Import_3] [tinyint] NOT NULL,
+	[NC_Import_4] [tinyint] NOT NULL,
+	[NC_Import_5] [tinyint] NOT NULL,
+	[NC_Import_6] [tinyint] NOT NULL,
+	[NC_Import_7] [tinyint] NOT NULL,
+	[NC_Import_8] [tinyint] NOT NULL,
+	[NC_Import_9] [tinyint] NOT NULL,
+	[NC_Import_10] [tinyint] NOT NULL,
+	[NC_Import_11] [tinyint] NOT NULL,
+	[NC_Import_12] [tinyint] NOT NULL,
+	[NC_Import_13] [tinyint] NOT NULL,
+	[NC_Import_14] [tinyint] NOT NULL,
+	[NC_Import_15] [tinyint] NOT NULL,
+	[NC_Import_16] [tinyint] NOT NULL,
+	[NC_Import_17] [tinyint] NOT NULL,
+	[NC_Import_18] [tinyint] NOT NULL,
+	[NC_Import_19] [tinyint] NOT NULL,
+	[NC_Import_20] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_1] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_2] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_3] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_4] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_5] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_6] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_7] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_8] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_9] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_10] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_11] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_12] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_13] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_14] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_15] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_16] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_17] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_18] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_19] [tinyint] NOT NULL,
+	[NC_Can_Filter_By_20] [tinyint] NOT NULL,
+	[USRDFPR16] [char](15) NOT NULL,
+	[USRDFPR17] [char](15) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR411] PRIMARY KEY CLUSTERED 
+(
+	[SETUPKEY] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR408]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR408](
+	[BANKID] [char](15) NOT NULL,
+	[NC_Bank_Alias] [char](35) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR408] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC,
+	[NC_Bank_Alias] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR046]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR046](
+	[USERID] [char](15) NOT NULL,
+	[JRNENTRY] [int] NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR046] PRIMARY KEY CLUSTERED 
+(
+	[USERID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR407]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR407](
+	[Format_ID] [char](31) NOT NULL,
+	[NC_Transaction_Type] [char](5) NOT NULL,
+	[NC_Auto_Post_Account_Str] [char](129) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR407] PRIMARY KEY CLUSTERED 
+(
+	[Format_ID] ASC,
+	[NC_Transaction_Type] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR406]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR406](
+	[BANKID] [char](15) NOT NULL,
+	[NC_Propose_Rule_ID] [char](15) NOT NULL,
+	[NC_Trx_Type] [char](9) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR406] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC,
+	[NC_Trx_Type] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR405]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR405](
+	[NC_Propose_Rule_ID] [char](15) NOT NULL,
+	[NC_Trx_Type] [char](9) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR405] PRIMARY KEY CLUSTERED 
+(
+	[NC_Trx_Type] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR404]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR404](
+	[NC_Propose_Rule_ID] [char](15) NOT NULL,
+	[DSCRIPTN] [char](31) NOT NULL,
+	[CB_Date] [tinyint] NOT NULL,
+	[CB_Reference] [tinyint] NOT NULL,
+	[CB_Cheque_Number] [tinyint] NOT NULL,
+	[CB_Transaction_Type] [tinyint] NOT NULL,
+	[NC_Start_Day] [smallint] NOT NULL,
+	[NC_End_Day] [smallint] NOT NULL,
+	[NC_Start_Statement] [smallint] NOT NULL,
+	[NC_End_Statement] [smallint] NOT NULL,
+	[NC_Start_Dynamics] [smallint] NOT NULL,
+	[NC_End_Dynamics] [smallint] NOT NULL,
+	[NC_Start_State_Cheque] [smallint] NOT NULL,
+	[NC_End_State_Cheque] [smallint] NOT NULL,
+	[NC_Start_Dynam_Cheque] [smallint] NOT NULL,
+	[NC_End_Dynam_Cheque] [smallint] NOT NULL,
+	[SOURCDOC] [char](11) NOT NULL,
+	[NC_Multiple_Match_Action] [smallint] NOT NULL,
+	[NC_Tolerance_Acct_STR] [char](129) NOT NULL,
+	[NC_Tolerance_Value] [numeric](19, 5) NOT NULL,
+	[NC_Tolerance_Percent] [smallint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR404] PRIMARY KEY CLUSTERED 
+(
+	[NC_Propose_Rule_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR323]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR323](
+	[USERID] [char](15) NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[NC_Statement_Number] [int] NOT NULL,
+	[LNITMSEQ] [int] NOT NULL,
+	[NC_Sequence_Number] [int] NOT NULL,
+	[NC_Marked] [tinyint] NOT NULL,
+	[TRXDATE] [datetime] NOT NULL,
+	[REFRENCE] [char](31) NOT NULL,
+	[ORDOCNUM] [char](21) NOT NULL,
+	[TRXAMNT] [numeric](19, 5) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR323] PRIMARY KEY CLUSTERED 
+(
+	[USERID] ASC,
+	[BANKID] ASC,
+	[NC_Statement_Number] ASC,
+	[LNITMSEQ] ASC,
+	[NC_Sequence_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR322]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR322](
+	[USERID] [char](15) NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[NC_Statement_Number] [int] NOT NULL,
+	[LNITMSEQ] [int] NOT NULL,
+	[NC_Trx_Date] [datetime] NOT NULL,
+	[NC_Trx_Type] [char](9) NOT NULL,
+	[NC_Reference] [char](31) NOT NULL,
+	[NCCHQNUM] [char](21) NOT NULL,
+	[NC_BL_Amount] [numeric](19, 5) NOT NULL,
+	[NC_Bank_Amount] [numeric](19, 5) NOT NULL,
+	[LINCOUNT] [smallint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR322] PRIMARY KEY CLUSTERED 
+(
+	[USERID] ASC,
+	[BANKID] ASC,
+	[NC_Statement_Number] ASC,
+	[LNITMSEQ] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR403]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR403](
+	[BANKID] [char](15) NOT NULL,
+	[NC_BAI_Format_Override] [tinyint] NOT NULL,
+	[NC_CheckNumber] [smallint] NOT NULL,
+	[NC_Start_Pos] [smallint] NOT NULL,
+	[NC_Length] [smallint] NOT NULL,
+	[NC_Ignore_Imported_Balan] [tinyint] NOT NULL,
+	[NC_BAI_Curr] [char](11) NOT NULL,
+	[NC_Alternate_BAI2] [tinyint] NOT NULL,
+	[NC_BAI_Import_Text_From] [smallint] NOT NULL,
+	[NC_Start_Pos_2] [smallint] NOT NULL,
+	[NC_Length_2] [smallint] NOT NULL,
+	[NC_MT940_Reference] [smallint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR403] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR402]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR402](
+	[BNKACTNM] [char](15) NOT NULL,
+	[NC_Sort_Code] [char](21) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR402] PRIMARY KEY NONCLUSTERED 
+(
+	[BNKACTNM] ASC,
+	[NC_Sort_Code] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR221]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR221](
+	[BANKID] [char](15) NOT NULL,
+	[NC_Sequence_Number] [int] NOT NULL,
+	[NCGRPREF] [char](101) NOT NULL,
+	[NC_Deposit_Group_ID] [char](21) NOT NULL,
+	[NC_Field_Count] [smallint] NOT NULL,
+	[NC_Group_Values_1] [char](31) NOT NULL,
+	[NC_Group_Values_2] [char](31) NOT NULL,
+	[NC_Group_Values_3] [char](31) NOT NULL,
+	[NC_Group_Values_4] [char](31) NOT NULL,
+	[NC_Group_Values_5] [char](31) NOT NULL,
+	[NC_Group_Values_6] [char](31) NOT NULL,
+	[NC_Group_Values_7] [char](31) NOT NULL,
+	[NC_Group_Values_8] [char](31) NOT NULL,
+	[NC_Group_Values_9] [char](31) NOT NULL,
+	[NC_Group_Values_10] [char](31) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR221] PRIMARY KEY NONCLUSTERED 
+(
+	[BANKID] ASC,
+	[NC_Sequence_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR219]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR219](
+	[NC_Deposit_Group_ID] [char](21) NOT NULL,
+	[NC_Deposit_Group_Field] [char](41) NOT NULL,
+	[NC_Field_Value] [char](41) NOT NULL,
+	[NC_Group_As] [char](21) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR219] PRIMARY KEY CLUSTERED 
+(
+	[NC_Deposit_Group_ID] ASC,
+	[NC_Deposit_Group_Field] ASC,
+	[NC_Field_Value] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR218]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR218](
+	[NC_Deposit_Group_ID] [char](21) NOT NULL,
+	[SEQNUMBR] [int] NOT NULL,
+	[NC_Deposit_Group_Field] [char](41) NOT NULL,
+	[NC_Start_Char] [smallint] NOT NULL,
+	[NC_End_Char] [smallint] NOT NULL,
+	[NC_Group_By_Value] [tinyint] NOT NULL,
+	[NC_Process_Other_Values] [smallint] NOT NULL,
+	[NCGRPNG] [smallint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR218] PRIMARY KEY CLUSTERED 
+(
+	[NC_Deposit_Group_ID] ASC,
+	[NC_Deposit_Group_Field] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR220]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR220](
+	[NC_Deposit_Group_ID] [char](21) NOT NULL,
+	[SERIES] [smallint] NOT NULL,
+	[TRXSRCPX] [char](5) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR220] PRIMARY KEY CLUSTERED 
+(
+	[NC_Deposit_Group_ID] ASC,
+	[SERIES] ASC,
+	[TRXSRCPX] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR217]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR217](
+	[NC_Deposit_Group_ID] [char](21) NOT NULL,
+	[NC_Description] [char](31) NOT NULL,
+	[NOTEINDX] [numeric](19, 5) NOT NULL,
+	[NC_Next_Deposit_Number] [char](21) NOT NULL,
+	[NC_Date_Mask] [char](21) NOT NULL,
+	[NC_Separator] [char](3) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR217] PRIMARY KEY CLUSTERED 
+(
+	[NC_Deposit_Group_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR309]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR309](
+	[JRNENTRY] [int] NOT NULL,
+	[RCTRXSEQ] [numeric](19, 5) NOT NULL,
+	[ACTINDX] [int] NOT NULL,
+	[TRXDATE] [datetime] NOT NULL,
+	[NC_Sequence_Number] [int] NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[CSHRCTYP] [smallint] NOT NULL,
+	[CHEKNMBR] [char](21) NOT NULL,
+	[CARDNAME] [char](15) NOT NULL,
+	[CSPORNBR] [char](21) NOT NULL,
+	[NCEXFLD1] [char](51) NOT NULL,
+	[NCEXFLD2] [char](51) NOT NULL,
+	[CUSTNMBR] [char](15) NOT NULL,
+	[CPRCSTNM] [char](15) NOT NULL,
+	[TRXDSCRN] [char](31) NOT NULL,
+	[TRXSORCE] [char](13) NOT NULL,
+	[VCHRNMBR] [char](21) NOT NULL,
+	[DOCNUMBR] [char](21) NOT NULL,
+	[REFRENCE] [char](31) NOT NULL,
+	[DSCRIPTN] [char](31) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR309] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC,
+	[NC_Sequence_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR401]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR401](
+	[SETUPKEY] [smallint] NOT NULL,
+	[NC_CheckNumber] [smallint] NOT NULL,
+	[NC_StoreNumbers] [tinyint] NOT NULL,
+	[NC_SpareStrings_1] [char](255) NOT NULL,
+	[NC_SpareStrings_2] [char](255) NOT NULL,
+	[NC_SpareStrings_3] [char](255) NOT NULL,
+	[NC_SpareStrings_4] [char](255) NOT NULL,
+	[NC_SpareStrings_5] [char](255) NOT NULL,
+	[NC_SpareInts_1] [smallint] NOT NULL,
+	[NC_SpareInts_2] [smallint] NOT NULL,
+	[NC_SpareInts_3] [smallint] NOT NULL,
+	[NC_SpareInts_4] [smallint] NOT NULL,
+	[NC_SpareInts_5] [smallint] NOT NULL,
+	[NC_SpareInts_6] [smallint] NOT NULL,
+	[NC_SpareInts_7] [smallint] NOT NULL,
+	[NC_SpareInts_8] [smallint] NOT NULL,
+	[NC_SpareInts_9] [smallint] NOT NULL,
+	[NC_SpareInts_10] [smallint] NOT NULL,
+	[NC_BAI_Curr] [char](11) NOT NULL,
+	[NC_Alternate_BAI2] [tinyint] NOT NULL,
+	[NC_BAI_Import_Text_From] [smallint] NOT NULL,
+	[NC_Start_Pos_2] [smallint] NOT NULL,
+	[NC_Length_2] [smallint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR401] PRIMARY KEY CLUSTERED 
+(
+	[SETUPKEY] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR400]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR400](
+	[ID] [char](21) NOT NULL,
+	[StoreNumber] [char](65) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR400] PRIMARY KEY NONCLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR041]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR041](
+	[USERID] [char](15) NOT NULL,
+	[NC_Bank_ID] [char](15) NOT NULL,
+	[NC_Sequence_Number] [int] NOT NULL,
+	[REFRENCE] [char](31) NOT NULL,
+	[ORDOCNUM] [char](21) NOT NULL,
+	[TRXDATE] [datetime] NOT NULL,
+	[NC_Bank_Amount] [numeric](19, 5) NOT NULL,
+	[NC_Marked] [tinyint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR041] PRIMARY KEY NONCLUSTERED 
+(
+	[USERID] ASC,
+	[NC_Bank_ID] ASC,
+	[NC_Sequence_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR321]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR321](
+	[BANKID] [char](15) NOT NULL,
+	[RECONUM] [numeric](19, 5) NOT NULL,
+	[NC_Reconciled_Date] [datetime] NOT NULL,
+	[NC_Balance_Date] [datetime] NOT NULL,
+	[NC_GL_Balance] [numeric](19, 5) NOT NULL,
+	[NC_Statement_Ending_Bala] [numeric](19, 5) NOT NULL,
+	[NC_Monthly_Start_Balance] [numeric](19, 5) NOT NULL,
+	[NC_GL_Checks] [numeric](19, 5) NOT NULL,
+	[NC_Start_Of_Month] [datetime] NOT NULL,
+	[NC_End_Of_Month] [datetime] NOT NULL,
+	[NC_Month_Checks] [numeric](19, 5) NOT NULL,
+	[NCMonthDeposits] [numeric](19, 5) NOT NULL,
+	[NC_#_Of_Cheques] [smallint] NOT NULL,
+	[NC_#_Of_Deposits] [smallint] NOT NULL,
+	[NC_GL_Deposits] [numeric](19, 5) NOT NULL,
+	[NC_Bank_Deposits] [numeric](19, 5) NOT NULL,
+	[NC_Bank_Checks] [numeric](19, 5) NOT NULL,
+	[NC_#_of_Bank_Checks] [smallint] NOT NULL,
+	[NC_#_of_Bank_Deposits] [smallint] NOT NULL,
+	[NC_#_of_GL_Checks] [smallint] NOT NULL,
+	[NC_#_of_GL_Deposits] [smallint] NOT NULL,
+	[CURRNIDX] [smallint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR321] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC,
+	[RECONUM] ASC,
+	[NC_Reconciled_Date] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR800]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR800](
+	[NCACTVTY] [smallint] NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[USERID] [char](15) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR800] PRIMARY KEY CLUSTERED 
+(
+	[NCACTVTY] ASC,
+	[BANKID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR320]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR320](
+	[NC_Identification_Number] [int] NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[NC_Statement_Date] [datetime] NOT NULL,
+	[NC_Statement_Number] [int] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR320] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC,
+	[NC_Statement_Date] ASC,
+	[NC_Identification_Number] ASC,
+	[NC_Statement_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR319]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR319](
+	[NC_BAI_Curr] [char](11) NOT NULL,
+	[CURNCYID] [char](15) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR319] PRIMARY KEY CLUSTERED 
+(
+	[NC_BAI_Curr] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR318]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR318](
+	[NC_BAI_Type_Code] [char](11) NOT NULL,
+	[DSCRIPTN] [char](31) NOT NULL,
+	[NC_DebitCredit] [tinyint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR318] PRIMARY KEY CLUSTERED 
+(
+	[NC_BAI_Type_Code] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR317]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR317](
+	[USERID] [char](15) NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[SEQNUMBR] [int] NOT NULL,
+	[NC_Sequence_Number] [int] NOT NULL,
+	[NC_Matched] [tinyint] NOT NULL,
+	[NC_Match_Number] [int] NOT NULL,
+	[NC_Trx_Date] [datetime] NOT NULL,
+	[NC_Trx_Type] [char](9) NOT NULL,
+	[NC_Reference] [char](31) NOT NULL,
+	[NC_BL_Amount] [numeric](19, 5) NOT NULL,
+	[NCCHQNUM] [char](21) NOT NULL,
+	[NC_Bank_Amount] [numeric](19, 5) NOT NULL,
+	[LNITMSEQ] [int] NOT NULL,
+	[NC_Statement_Number] [int] NOT NULL,
+	[ORDOCNUM] [char](21) NOT NULL,
+	[TRXDATE] [datetime] NOT NULL,
+	[TRXAMNT] [numeric](19, 5) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR317] PRIMARY KEY CLUSTERED 
+(
+	[USERID] ASC,
+	[BANKID] ASC,
+	[SEQNUMBR] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR306]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR306](
+	[Format_ID] [char](31) NOT NULL,
+	[LNSEQNBR] [numeric](19, 5) NOT NULL,
+	[NCDCICTR] [char](1) NOT NULL,
+	[NCCRDDBT] [smallint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR306] PRIMARY KEY CLUSTERED 
+(
+	[Format_ID] ASC,
+	[LNSEQNBR] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR308]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR308](
+	[BANKID] [char](15) NOT NULL,
+	[RECONUM] [numeric](19, 5) NOT NULL,
+	[NC_Reconciled_Date] [datetime] NOT NULL,
+	[LNSEQNBR] [numeric](19, 5) NOT NULL,
+	[Date8] [datetime] NOT NULL,
+	[REFRENCE] [char](31) NOT NULL,
+	[BL_Cheque_Number] [char](21) NOT NULL,
+	[NC_Amount] [numeric](19, 5) NOT NULL,
+	[Change_Flag] [tinyint] NOT NULL,
+	[Running_Total] [numeric](19, 5) NOT NULL,
+	[CURRNIDX] [smallint] NOT NULL,
+	[ACTINDX] [int] NOT NULL,
+	[ACTNUMBR_1] [char](7) NOT NULL,
+	[ACTNUMBR_2] [char](7) NOT NULL,
+	[ACTNUMBR_3] [char](7) NOT NULL,
+	[ACTNUMBR_4] [char](7) NOT NULL,
+	[ACTNUMBR_5] [char](7) NOT NULL,
+	[ACTNUMBR_6] [char](7) NOT NULL,
+	[ACTNUMBR_7] [char](7) NOT NULL,
+	[ACTNUMBR_8] [char](7) NOT NULL,
+	[ACTNUMBR_9] [char](7) NOT NULL,
+	[ACTNUMBR_10] [char](7) NOT NULL,
+	[NC_Credit] [tinyint] NOT NULL,
+	[ORGNTSRC] [char](15) NOT NULL,
+	[ORGNATYP] [smallint] NOT NULL,
+	[QKOFSET] [smallint] NOT NULL,
+	[SERIES] [smallint] NOT NULL,
+	[ORTRXTYP] [smallint] NOT NULL,
+	[ORCTRNUM] [char](21) NOT NULL,
+	[ORMSTRID] [char](31) NOT NULL,
+	[ORMSTRNM] [char](65) NOT NULL,
+	[ORDOCNUM] [char](21) NOT NULL,
+	[NC_Sequence_Number] [int] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR308] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC,
+	[RECONUM] ASC,
+	[NC_Reconciled_Date] ASC,
+	[ACTINDX] ASC,
+	[LNSEQNBR] ASC,
+	[Change_Flag] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR314]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR314](
+	[USERID] [char](15) NOT NULL,
+	[OPENYEAR] [smallint] NOT NULL,
+	[JRNENTRY] [int] NOT NULL,
+	[RCTRXSEQ] [numeric](19, 5) NOT NULL,
+	[SOURCDOC] [char](11) NOT NULL,
+	[REFRENCE] [char](31) NOT NULL,
+	[DSCRIPTN] [char](31) NOT NULL,
+	[TRXDATE] [datetime] NOT NULL,
+	[TRXSORCE] [char](13) NOT NULL,
+	[ACTINDX] [int] NOT NULL,
+	[POLLDTRX] [tinyint] NOT NULL,
+	[LASTUSER] [char](15) NOT NULL,
+	[LSTDTEDT] [datetime] NOT NULL,
+	[USWHPSTD] [char](15) NOT NULL,
+	[ORGNTSRC] [char](15) NOT NULL,
+	[ORGNATYP] [smallint] NOT NULL,
+	[QKOFSET] [smallint] NOT NULL,
+	[SERIES] [smallint] NOT NULL,
+	[ORTRXTYP] [smallint] NOT NULL,
+	[ORCTRNUM] [char](21) NOT NULL,
+	[ORMSTRID] [char](31) NOT NULL,
+	[ORMSTRNM] [char](65) NOT NULL,
+	[ORDOCNUM] [char](21) NOT NULL,
+	[ORPSTDDT] [datetime] NOT NULL,
+	[ORTRXSRC] [char](13) NOT NULL,
+	[OrigDTASeries] [smallint] NOT NULL,
+	[OrigSeqNum] [int] NOT NULL,
+	[SEQNUMBR] [int] NOT NULL,
+	[DTA_GL_Status] [smallint] NOT NULL,
+	[DTA_Index] [numeric](19, 5) NOT NULL,
+	[CURNCYID] [char](15) NOT NULL,
+	[CURRNIDX] [smallint] NOT NULL,
+	[RATETPID] [char](15) NOT NULL,
+	[EXGTBLID] [char](15) NOT NULL,
+	[XCHGRATE] [numeric](19, 7) NOT NULL,
+	[EXCHDATE] [datetime] NOT NULL,
+	[TIME1] [datetime] NOT NULL,
+	[RTCLCMTD] [smallint] NOT NULL,
+	[NOTEINDX] [numeric](19, 5) NOT NULL,
+	[ICTRX] [tinyint] NOT NULL,
+	[ORCOMID] [char](5) NOT NULL,
+	[ORIGINJE] [int] NOT NULL,
+	[PERIODID] [smallint] NOT NULL,
+	[CRDTAMNT] [numeric](19, 5) NOT NULL,
+	[DEBITAMT] [numeric](19, 5) NOT NULL,
+	[ORCRDAMT] [numeric](19, 5) NOT NULL,
+	[ORDBTAMT] [numeric](19, 5) NOT NULL,
+	[DOCDATE] [datetime] NOT NULL,
+	[PSTGNMBR] [int] NOT NULL,
+	[PPSGNMBR] [int] NOT NULL,
+	[DENXRATE] [numeric](19, 7) NOT NULL,
+	[MCTRXSTT] [smallint] NOT NULL,
+	[CorrespondingUnit] [char](5) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR314] PRIMARY KEY NONCLUSTERED 
+(
+	[DEX_ROW_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR035]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR035](
+	[USERID] [char](15) NOT NULL,
+	[SEQNUMBR] [int] NOT NULL,
+	[MKDTOPST] [tinyint] NOT NULL,
+	[DOCTYPE] [smallint] NOT NULL,
+	[ACTINDX] [int] NOT NULL,
+	[CUSTNMBR] [char](15) NOT NULL,
+	[VENDORID] [char](15) NOT NULL,
+	[REFRENCE] [char](31) NOT NULL,
+	[CHEKNMBR] [char](21) NOT NULL,
+	[DOCAMNT] [numeric](19, 5) NOT NULL,
+	[TAXDTLID] [char](15) NOT NULL,
+	[TAXAMNT] [numeric](19, 5) NOT NULL,
+	[PSTGSTUS] [smallint] NOT NULL,
+	[DOCNUMBR] [char](21) NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[NC_Trx_Date] [datetime] NOT NULL,
+	[NC_Trx_Type] [char](9) NOT NULL,
+	[NC_Reference] [char](31) NOT NULL,
+	[NC_BL_Amount] [numeric](19, 5) NOT NULL,
+	[NCCHQNUM] [char](21) NOT NULL,
+	[LNITMSEQ] [int] NOT NULL,
+	[NC_Statement_Number] [int] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR035] PRIMARY KEY NONCLUSTERED 
+(
+	[USERID] ASC,
+	[SEQNUMBR] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR304]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR304](
+	[OPENYEAR] [smallint] NOT NULL,
+	[JRNENTRY] [int] NOT NULL,
+	[RCTRXSEQ] [numeric](19, 5) NOT NULL,
+	[SOURCDOC] [char](11) NOT NULL,
+	[REFRENCE] [char](31) NOT NULL,
+	[DSCRIPTN] [char](31) NOT NULL,
+	[TRXDATE] [datetime] NOT NULL,
+	[TRXSORCE] [char](13) NOT NULL,
+	[ACTINDX] [int] NOT NULL,
+	[TRXAMNT] [numeric](19, 5) NOT NULL,
+	[POLLDTRX] [tinyint] NOT NULL,
+	[LASTUSER] [char](15) NOT NULL,
+	[LSTDTEDT] [datetime] NOT NULL,
+	[USWHPSTD] [char](15) NOT NULL,
+	[ORGNTSRC] [char](15) NOT NULL,
+	[ORGNATYP] [smallint] NOT NULL,
+	[QKOFSET] [smallint] NOT NULL,
+	[SERIES] [smallint] NOT NULL,
+	[ORTRXTYP] [smallint] NOT NULL,
+	[ORCTRNUM] [char](21) NOT NULL,
+	[ORMSTRID] [char](31) NOT NULL,
+	[ORMSTRNM] [char](65) NOT NULL,
+	[ORDOCNUM] [char](21) NOT NULL,
+	[ORPSTDDT] [datetime] NOT NULL,
+	[ORTRXSRC] [char](13) NOT NULL,
+	[CURNCYID] [char](15) NOT NULL,
+	[CURRNIDX] [smallint] NOT NULL,
+	[RATETPID] [char](15) NOT NULL,
+	[EXGTBLID] [char](15) NOT NULL,
+	[XCHGRATE] [numeric](19, 7) NOT NULL,
+	[EXCHDATE] [datetime] NOT NULL,
+	[TIME1] [datetime] NOT NULL,
+	[RTCLCMTD] [smallint] NOT NULL,
+	[ORIGAMT] [numeric](19, 5) NOT NULL,
+	[NOTEINDX] [numeric](19, 5) NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[NC_Sequence_Number] [int] NOT NULL,
+	[NC_Bank_Amount] [numeric](19, 5) NOT NULL,
+	[NC_MC_Def_1] [char](15) NOT NULL,
+	[NC_MC_Def_2] [smallint] NOT NULL,
+	[NC_MC_Def_3] [char](15) NOT NULL,
+	[NC_MC_Def_4] [char](15) NOT NULL,
+	[NC_MC_Def_5] [numeric](19, 7) NOT NULL,
+	[NC_MC_Def_6] [datetime] NOT NULL,
+	[NC_MC_Def_7] [smallint] NOT NULL,
+	[NC_MC_Def_8] [datetime] NOT NULL,
+	[NC_MC_Def_9] [smallint] NOT NULL,
+	[NC_MC_Def_10] [smallint] NOT NULL,
+	[NC_MC_Def_11] [smallint] NOT NULL,
+	[NC_MC_Def_12] [datetime] NOT NULL,
+	[NC_MC_Def_13] [numeric](19, 7) NOT NULL,
+	[NC_MC_Def_14] [smallint] NOT NULL,
+	[SEQNUMBR] [int] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR304] PRIMARY KEY NONCLUSTERED 
+(
+	[JRNENTRY] ASC,
+	[RCTRXSEQ] ASC,
+	[ACTINDX] ASC,
+	[TRXDATE] ASC,
+	[NC_Sequence_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR011]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR011](
+	[BANKID] [char](15) NOT NULL,
+	[NC_Statement_Number] [int] NOT NULL,
+	[NC_Statement_Date] [datetime] NOT NULL,
+	[NC_Trx_Date] [datetime] NOT NULL,
+	[NC_Reference] [char](31) NOT NULL,
+	[NC_Trx_Type] [char](9) NOT NULL,
+	[NC_Debit_Amount] [numeric](19, 5) NOT NULL,
+	[NC_Credit_Amount] [numeric](19, 5) NOT NULL,
+	[NC_Trx_Balance] [numeric](19, 5) NOT NULL,
+	[NC_BL_Amount] [numeric](19, 5) NOT NULL,
+	[NCCHQNUM] [char](21) NOT NULL,
+	[NC_Match_Number] [int] NOT NULL,
+	[NC_Marked] [tinyint] NOT NULL,
+	[NC_Matched] [tinyint] NOT NULL,
+	[NC_Original_Trx_Type] [char](11) NOT NULL,
+	[LNITMSEQ] [int] NOT NULL,
+	[CURRNIDX] [smallint] NOT NULL,
+	[NC_Bank_Amount] [numeric](19, 5) NOT NULL,
+	[NC_Text_Reference] [char](255) NOT NULL,
+	[NC_String_10_1] [char](11) NOT NULL,
+	[NC_String_10_2] [char](11) NOT NULL,
+	[NC_String_10_3] [char](11) NOT NULL,
+	[NC_String_10_4] [char](11) NOT NULL,
+	[NC_String_30_1] [char](31) NOT NULL,
+	[NC_String_30_2] [char](31) NOT NULL,
+	[NC_String_30_3] [char](31) NOT NULL,
+	[NC_String_30_4] [char](31) NOT NULL,
+	[NC_String_30_5] [char](31) NOT NULL,
+	[NC_String_30_6] [char](31) NOT NULL,
+	[NC_String_80_1] [char](81) NOT NULL,
+	[NC_String_80_2] [char](81) NOT NULL,
+	[NC_UD_Account_Number_Str] [char](129) NOT NULL,
+	[NC_LongInt_1] [int] NOT NULL,
+	[NC_LongInt_2] [int] NOT NULL,
+	[NC_LongInt_3] [int] NOT NULL,
+	[NC_LongInt_4] [int] NOT NULL,
+	[NC_LongInt_5] [int] NOT NULL,
+	[NC_LongInt_6] [int] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR011] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC,
+	[NC_Trx_Date] ASC,
+	[NC_Trx_Type] ASC,
+	[NC_Reference] ASC,
+	[NC_BL_Amount] ASC,
+	[NCCHQNUM] ASC,
+	[LNITMSEQ] ASC,
+	[NC_Statement_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR020]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR020](
+	[BANKID] [char](15) NOT NULL,
+	[NC_Statement_Number] [int] NOT NULL,
+	[NC_Statement_Date] [datetime] NOT NULL,
+	[NC_Trx_Date] [datetime] NOT NULL,
+	[NC_Reference] [char](31) NOT NULL,
+	[NC_Trx_Type] [char](9) NOT NULL,
+	[NC_Debit_Amount] [numeric](19, 5) NOT NULL,
+	[NC_Credit_Amount] [numeric](19, 5) NOT NULL,
+	[NC_Trx_Balance] [numeric](19, 5) NOT NULL,
+	[NC_BL_Amount] [numeric](19, 5) NOT NULL,
+	[NCCHQNUM] [char](21) NOT NULL,
+	[NC_Match_Number] [int] NOT NULL,
+	[NC_Marked] [tinyint] NOT NULL,
+	[NC_Matched] [tinyint] NOT NULL,
+	[RECONUM] [numeric](19, 5) NOT NULL,
+	[NC_Reconciled_Date] [datetime] NOT NULL,
+	[USWHPSTD] [char](15) NOT NULL,
+	[NCReconcileJournal] [int] NOT NULL,
+	[NC_Original_Trx_Type] [char](11) NOT NULL,
+	[LNITMSEQ] [int] NOT NULL,
+	[CURRNIDX] [smallint] NOT NULL,
+	[NC_Bank_Amount] [numeric](19, 5) NOT NULL,
+	[NC_Text_Reference] [char](255) NOT NULL,
+	[NC_External_ID] [char](41) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR020] PRIMARY KEY NONCLUSTERED 
+(
+	[BANKID] ASC,
+	[NC_Trx_Date] ASC,
+	[NC_Trx_Type] ASC,
+	[NC_Reference] ASC,
+	[NC_BL_Amount] ASC,
+	[NCCHQNUM] ASC,
+	[LNITMSEQ] ASC,
+	[NC_Statement_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR029]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR029](
+	[BANKID] [char](15) NOT NULL,
+	[NC_Statement_Number] [int] NOT NULL,
+	[NC_Statement_Date] [datetime] NOT NULL,
+	[NC_Statement_Starting_Ba] [numeric](19, 5) NOT NULL,
+	[NC_Statement_Ending_Bala] [numeric](19, 5) NOT NULL,
+	[NC_Last_Statement_Number] [int] NOT NULL,
+	[NC_Last_Statement_Date] [datetime] NOT NULL,
+	[NC_Last_Statement_Balanc] [numeric](19, 5) NOT NULL,
+	[NC_Ending_Balance] [numeric](19, 5) NOT NULL,
+	[NC_Reconcile_Error] [tinyint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR029] PRIMARY KEY NONCLUSTERED 
+(
+	[BANKID] ASC,
+	[NC_Statement_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR209]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[NCABR209](
+	[NC_Sequence_Number] [int] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR209] PRIMARY KEY CLUSTERED 
+(
+	[NC_Sequence_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+/****** Object:  Table [dbo].[NCABR205]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR205](
+	[RPRTNAME] [char](31) NOT NULL,
+	[Option_Name] [char](31) NOT NULL,
+	[PRNTOFIL] [tinyint] NOT NULL,
+	[PRTOPRTR] [tinyint] NOT NULL,
+	[PRTOSCRN] [tinyint] NOT NULL,
+	[ASKECHTM] [tinyint] NOT NULL,
+	[EXPTTYPE] [smallint] NOT NULL,
+	[FILEXPNM] [char](255) NOT NULL,
+	[IFFILXST] [smallint] NOT NULL,
+	[Print_By] [smallint] NOT NULL,
+	[STRTDATE] [datetime] NOT NULL,
+	[ENDDATE] [datetime] NOT NULL,
+	[Start_Bank_ID] [char](15) NOT NULL,
+	[End_Bank_ID] [char](15) NOT NULL,
+	[Start_Format_ID] [char](31) NOT NULL,
+	[End_Format_ID] [char](31) NOT NULL,
+	[STRTYEAR] [smallint] NOT NULL,
+	[ENDYEAR] [smallint] NOT NULL,
+	[NC_Spare_End_Date] [datetime] NOT NULL,
+	[NC_Spare_End_Int] [smallint] NOT NULL,
+	[NC_Spare_End_String] [char](51) NOT NULL,
+	[NC_Spare_Start_Date] [datetime] NOT NULL,
+	[NC_Spare_Start_Int] [smallint] NOT NULL,
+	[NC_Spare_Start_String] [char](51) NOT NULL,
+	[NC_Start_Number] [int] NOT NULL,
+	[NC_End_Number] [int] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR205] PRIMARY KEY CLUSTERED 
+(
+	[RPRTNAME] ASC,
+	[Option_Name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR305]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR305](
+	[OPENYEAR] [smallint] NOT NULL,
+	[JRNENTRY] [int] NOT NULL,
+	[RCTRXSEQ] [numeric](19, 5) NOT NULL,
+	[SOURCDOC] [char](11) NOT NULL,
+	[REFRENCE] [char](31) NOT NULL,
+	[DSCRIPTN] [char](31) NOT NULL,
+	[TRXDATE] [datetime] NOT NULL,
+	[TRXSORCE] [char](13) NOT NULL,
+	[ACTINDX] [int] NOT NULL,
+	[POLLDTRX] [tinyint] NOT NULL,
+	[LASTUSER] [char](15) NOT NULL,
+	[LSTDTEDT] [datetime] NOT NULL,
+	[USWHPSTD] [char](15) NOT NULL,
+	[ORGNTSRC] [char](15) NOT NULL,
+	[ORGNATYP] [smallint] NOT NULL,
+	[QKOFSET] [smallint] NOT NULL,
+	[SERIES] [smallint] NOT NULL,
+	[ORTRXTYP] [smallint] NOT NULL,
+	[ORCTRNUM] [char](21) NOT NULL,
+	[ORMSTRID] [char](31) NOT NULL,
+	[ORMSTRNM] [char](65) NOT NULL,
+	[ORDOCNUM] [char](21) NOT NULL,
+	[ORPSTDDT] [datetime] NOT NULL,
+	[ORTRXSRC] [char](13) NOT NULL,
+	[OrigDTASeries] [smallint] NOT NULL,
+	[OrigSeqNum] [int] NOT NULL,
+	[SEQNUMBR] [int] NOT NULL,
+	[DTA_GL_Status] [smallint] NOT NULL,
+	[DTA_Index] [numeric](19, 5) NOT NULL,
+	[CURNCYID] [char](15) NOT NULL,
+	[CURRNIDX] [smallint] NOT NULL,
+	[RATETPID] [char](15) NOT NULL,
+	[EXGTBLID] [char](15) NOT NULL,
+	[XCHGRATE] [numeric](19, 7) NOT NULL,
+	[EXCHDATE] [datetime] NOT NULL,
+	[TIME1] [datetime] NOT NULL,
+	[RTCLCMTD] [smallint] NOT NULL,
+	[NOTEINDX] [numeric](19, 5) NOT NULL,
+	[ICTRX] [tinyint] NOT NULL,
+	[ORCOMID] [char](5) NOT NULL,
+	[ORIGINJE] [int] NOT NULL,
+	[PERIODID] [smallint] NOT NULL,
+	[CRDTAMNT] [numeric](19, 5) NOT NULL,
+	[DEBITAMT] [numeric](19, 5) NOT NULL,
+	[ORCRDAMT] [numeric](19, 5) NOT NULL,
+	[ORDBTAMT] [numeric](19, 5) NOT NULL,
+	[DOCDATE] [datetime] NOT NULL,
+	[PSTGNMBR] [int] NOT NULL,
+	[PPSGNMBR] [int] NOT NULL,
+	[DENXRATE] [numeric](19, 7) NOT NULL,
+	[MCTRXSTT] [smallint] NOT NULL,
+	[CorrespondingUnit] [char](5) NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[MKTOPROC] [tinyint] NOT NULL,
+	[NC_Assigned] [tinyint] NOT NULL,
+	[NC_MC_Def_1] [char](15) NOT NULL,
+	[NC_MC_Def_2] [smallint] NOT NULL,
+	[NC_MC_Def_3] [char](15) NOT NULL,
+	[NC_MC_Def_4] [char](15) NOT NULL,
+	[NC_MC_Def_5] [numeric](19, 7) NOT NULL,
+	[NC_MC_Def_6] [datetime] NOT NULL,
+	[NC_MC_Def_7] [smallint] NOT NULL,
+	[NC_MC_Def_8] [datetime] NOT NULL,
+	[NC_MC_Def_9] [smallint] NOT NULL,
+	[NC_MC_Def_10] [smallint] NOT NULL,
+	[NC_MC_Def_11] [smallint] NOT NULL,
+	[NC_MC_Def_12] [datetime] NOT NULL,
+	[NC_MC_Def_13] [numeric](19, 7) NOT NULL,
+	[NC_MC_Def_14] [smallint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR305] PRIMARY KEY NONCLUSTERED 
+(
+	[BANKID] ASC,
+	[JRNENTRY] ASC,
+	[OPENYEAR] ASC,
+	[RCTRXSEQ] ASC,
+	[SEQNUMBR] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR026]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR026](
+	[JRNENTRY] [int] NOT NULL,
+	[RCTRXSEQ] [numeric](19, 5) NOT NULL,
+	[SOURCDOC] [char](11) NOT NULL,
+	[REFRENCE] [char](31) NOT NULL,
+	[DSCRIPTN] [char](31) NOT NULL,
+	[TRXDATE] [datetime] NOT NULL,
+	[USERID] [char](15) NOT NULL,
+	[NC_Bank_ID] [char](15) NOT NULL,
+	[NC_Trx_Date] [datetime] NOT NULL,
+	[NC_Reference] [char](31) NOT NULL,
+	[NC_Trx_Type] [char](9) NOT NULL,
+	[NC_BL_Amount] [numeric](19, 5) NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[TRXAMNT] [numeric](19, 5) NOT NULL,
+	[NC_Sequence_Number] [int] NOT NULL,
+	[RECONUM] [numeric](19, 5) NOT NULL,
+	[NC_Reconciled_Date] [datetime] NOT NULL,
+	[NC_Match_Number] [int] NOT NULL,
+	[NC_Originating_Trx] [smallint] NOT NULL,
+	[NCReconcileJournal] [int] NOT NULL,
+	[CURRNIDX] [smallint] NOT NULL,
+	[ORIGAMT] [numeric](19, 5) NOT NULL,
+	[NC_Bank_Amount] [numeric](19, 5) NOT NULL,
+	[NC_MC_Def_1] [char](15) NOT NULL,
+	[NC_MC_Def_2] [smallint] NOT NULL,
+	[NC_MC_Def_3] [char](15) NOT NULL,
+	[NC_MC_Def_4] [char](15) NOT NULL,
+	[NC_MC_Def_5] [numeric](19, 7) NOT NULL,
+	[NC_MC_Def_6] [datetime] NOT NULL,
+	[NC_MC_Def_7] [smallint] NOT NULL,
+	[NC_MC_Def_8] [datetime] NOT NULL,
+	[NC_MC_Def_9] [smallint] NOT NULL,
+	[NC_MC_Def_10] [smallint] NOT NULL,
+	[NC_MC_Def_11] [smallint] NOT NULL,
+	[NC_MC_Def_12] [datetime] NOT NULL,
+	[NC_MC_Def_13] [numeric](19, 7) NOT NULL,
+	[NC_MC_Def_14] [smallint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR026] PRIMARY KEY NONCLUSTERED 
+(
+	[DEX_ROW_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR022]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR022](
+	[JRNENTRY] [int] NOT NULL,
+	[RCTRXSEQ] [numeric](19, 5) NOT NULL,
+	[SOURCDOC] [char](11) NOT NULL,
+	[REFRENCE] [char](31) NOT NULL,
+	[DSCRIPTN] [char](31) NOT NULL,
+	[TRXDATE] [datetime] NOT NULL,
+	[USERID] [char](15) NOT NULL,
+	[NC_Bank_ID] [char](15) NOT NULL,
+	[NC_Trx_Date] [datetime] NOT NULL,
+	[NC_Reference] [char](31) NOT NULL,
+	[NC_Trx_Type] [char](9) NOT NULL,
+	[NC_BL_Amount] [numeric](19, 5) NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[TRXAMNT] [numeric](19, 5) NOT NULL,
+	[NC_Sequence_Number] [int] NOT NULL,
+	[RECONUM] [numeric](19, 5) NOT NULL,
+	[NC_Reconciled_Date] [datetime] NOT NULL,
+	[NC_Match_Number] [int] NOT NULL,
+	[NC_Originating_Trx] [smallint] NOT NULL,
+	[NCReconcileJournal] [int] NOT NULL,
+	[CURRNIDX] [smallint] NOT NULL,
+	[ORIGAMT] [numeric](19, 5) NOT NULL,
+	[NC_Bank_Amount] [numeric](19, 5) NOT NULL,
+	[NC_MC_Def_1] [char](15) NOT NULL,
+	[NC_MC_Def_2] [smallint] NOT NULL,
+	[NC_MC_Def_3] [char](15) NOT NULL,
+	[NC_MC_Def_4] [char](15) NOT NULL,
+	[NC_MC_Def_5] [numeric](19, 7) NOT NULL,
+	[NC_MC_Def_6] [datetime] NOT NULL,
+	[NC_MC_Def_7] [smallint] NOT NULL,
+	[NC_MC_Def_8] [datetime] NOT NULL,
+	[NC_MC_Def_9] [smallint] NOT NULL,
+	[NC_MC_Def_10] [smallint] NOT NULL,
+	[NC_MC_Def_11] [smallint] NOT NULL,
+	[NC_MC_Def_12] [datetime] NOT NULL,
+	[NC_MC_Def_13] [numeric](19, 7) NOT NULL,
+	[NC_MC_Def_14] [smallint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR022] PRIMARY KEY NONCLUSTERED 
+(
+	[DEX_ROW_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR012]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR012](
+	[OPENYEAR] [smallint] NOT NULL,
+	[JRNENTRY] [int] NOT NULL,
+	[RCTRXSEQ] [numeric](19, 5) NOT NULL,
+	[SOURCDOC] [char](11) NOT NULL,
+	[REFRENCE] [char](31) NOT NULL,
+	[DSCRIPTN] [char](31) NOT NULL,
+	[TRXDATE] [datetime] NOT NULL,
+	[TRXSORCE] [char](13) NOT NULL,
+	[ACTINDX] [int] NOT NULL,
+	[TRXAMNT] [numeric](19, 5) NOT NULL,
+	[POLLDTRX] [tinyint] NOT NULL,
+	[LASTUSER] [char](15) NOT NULL,
+	[LSTDTEDT] [datetime] NOT NULL,
+	[USWHPSTD] [char](15) NOT NULL,
+	[ORGNTSRC] [char](15) NOT NULL,
+	[ORGNATYP] [smallint] NOT NULL,
+	[QKOFSET] [smallint] NOT NULL,
+	[SERIES] [smallint] NOT NULL,
+	[ORTRXTYP] [smallint] NOT NULL,
+	[ORCTRNUM] [char](21) NOT NULL,
+	[ORMSTRID] [char](31) NOT NULL,
+	[ORMSTRNM] [char](65) NOT NULL,
+	[ORDOCNUM] [char](21) NOT NULL,
+	[ORPSTDDT] [datetime] NOT NULL,
+	[ORTRXSRC] [char](13) NOT NULL,
+	[CURNCYID] [char](15) NOT NULL,
+	[CURRNIDX] [smallint] NOT NULL,
+	[RATETPID] [char](15) NOT NULL,
+	[EXGTBLID] [char](15) NOT NULL,
+	[XCHGRATE] [numeric](19, 7) NOT NULL,
+	[EXCHDATE] [datetime] NOT NULL,
+	[TIME1] [datetime] NOT NULL,
+	[RTCLCMTD] [smallint] NOT NULL,
+	[ORIGAMT] [numeric](19, 5) NOT NULL,
+	[NOTEINDX] [numeric](19, 5) NOT NULL,
+	[NC_Match_Number] [int] NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[NC_Marked] [tinyint] NOT NULL,
+	[NC_Matched] [tinyint] NOT NULL,
+	[NC_Sequence_Number] [int] NOT NULL,
+	[NC_Bank_Amount] [numeric](19, 5) NOT NULL,
+	[NC_MC_Def_1] [char](15) NOT NULL,
+	[NC_MC_Def_2] [smallint] NOT NULL,
+	[NC_MC_Def_3] [char](15) NOT NULL,
+	[NC_MC_Def_4] [char](15) NOT NULL,
+	[NC_MC_Def_5] [numeric](19, 7) NOT NULL,
+	[NC_MC_Def_6] [datetime] NOT NULL,
+	[NC_MC_Def_7] [smallint] NOT NULL,
+	[NC_MC_Def_8] [datetime] NOT NULL,
+	[NC_MC_Def_9] [smallint] NOT NULL,
+	[NC_MC_Def_10] [smallint] NOT NULL,
+	[NC_MC_Def_11] [smallint] NOT NULL,
+	[NC_MC_Def_12] [datetime] NOT NULL,
+	[NC_MC_Def_13] [numeric](19, 7) NOT NULL,
+	[NC_MC_Def_14] [smallint] NOT NULL,
+	[SEQNUMBR] [int] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR012] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC,
+	[NC_Sequence_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR023]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR023](
+	[BANKID] [char](15) NOT NULL,
+	[NC_Statement_Number] [int] NOT NULL,
+	[NC_Last_Statement_Date] [datetime] NOT NULL,
+	[NC_Last_Statement_Number] [int] NOT NULL,
+	[NC_Last_Statement_Balanc] [numeric](19, 5) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR023] PRIMARY KEY NONCLUSTERED 
+(
+	[BANKID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR021]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[NCABR021](
+	[RECONUM] [numeric](19, 5) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR021] PRIMARY KEY CLUSTERED 
+(
+	[RECONUM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+/****** Object:  Table [dbo].[NCABR013]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[NCABR013](
+	[NC_Match_Number] [int] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR013] PRIMARY KEY NONCLUSTERED 
+(
+	[NC_Match_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+/****** Object:  Table [dbo].[NCABR211]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR211](
+	[Import_Definition_ID] [char](21) NOT NULL,
+	[Import_Description] [char](51) NOT NULL,
+	[Import_Format] [smallint] NOT NULL,
+	[Import_File_Name] [char](255) NOT NULL,
+	[SEQNUMBR] [int] NOT NULL,
+	[Save_File_Name] [char](255) NOT NULL,
+	[Error_Handling] [smallint] NOT NULL,
+	[NOTEINDX] [numeric](19, 5) NOT NULL,
+	[Format_ID] [char](31) NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[Preserve_Sign] [tinyint] NOT NULL,
+	[Skip_Last_Line] [tinyint] NOT NULL,
+	[NC_Auto_Create_GL_Trxs] [tinyint] NOT NULL,
+	[NC_Auto_Post_Account_Str] [char](129) NOT NULL,
+	[NC_Auto_Propose] [tinyint] NOT NULL,
+	[NC_Auto_Reconcile] [tinyint] NOT NULL,
+	[NC_Default_Sort_Code] [char](9) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR211] PRIMARY KEY CLUSTERED 
+(
+	[Import_Definition_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCBL0002]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCBL0002](
+	[Import_Definition_ID] [char](21) NOT NULL,
+	[DATE1] [datetime] NOT NULL,
+	[TIME1] [datetime] NOT NULL,
+	[USERID] [char](15) NOT NULL,
+	[Import_File_Name] [char](255) NOT NULL,
+	[SEQNUMBR] [int] NOT NULL,
+	[Save_File_Name] [char](255) NOT NULL,
+	[Number_of_Records] [int] NOT NULL,
+	[Value] [numeric](19, 5) NOT NULL,
+	[Number_of_Errors] [int] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCBL0002] PRIMARY KEY CLUSTERED 
+(
+	[Import_Definition_ID] ASC,
+	[DATE1] ASC,
+	[TIME1] ASC,
+	[USERID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR019]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR019](
+	[OPENYEAR] [smallint] NOT NULL,
+	[JRNENTRY] [int] NOT NULL,
+	[RCTRXSEQ] [numeric](19, 5) NOT NULL,
+	[SOURCDOC] [char](11) NOT NULL,
+	[REFRENCE] [char](31) NOT NULL,
+	[DSCRIPTN] [char](31) NOT NULL,
+	[TRXDATE] [datetime] NOT NULL,
+	[TRXSORCE] [char](13) NOT NULL,
+	[ACTINDX] [int] NOT NULL,
+	[TRXAMNT] [numeric](19, 5) NOT NULL,
+	[POLLDTRX] [tinyint] NOT NULL,
+	[LASTUSER] [char](15) NOT NULL,
+	[LSTDTEDT] [datetime] NOT NULL,
+	[USWHPSTD] [char](15) NOT NULL,
+	[ORGNTSRC] [char](15) NOT NULL,
+	[ORGNATYP] [smallint] NOT NULL,
+	[QKOFSET] [smallint] NOT NULL,
+	[SERIES] [smallint] NOT NULL,
+	[ORTRXTYP] [smallint] NOT NULL,
+	[ORCTRNUM] [char](21) NOT NULL,
+	[ORMSTRID] [char](31) NOT NULL,
+	[ORMSTRNM] [char](65) NOT NULL,
+	[ORDOCNUM] [char](21) NOT NULL,
+	[ORPSTDDT] [datetime] NOT NULL,
+	[ORTRXSRC] [char](13) NOT NULL,
+	[CURNCYID] [char](15) NOT NULL,
+	[CURRNIDX] [smallint] NOT NULL,
+	[RATETPID] [char](15) NOT NULL,
+	[EXGTBLID] [char](15) NOT NULL,
+	[XCHGRATE] [numeric](19, 7) NOT NULL,
+	[EXCHDATE] [datetime] NOT NULL,
+	[TIME1] [datetime] NOT NULL,
+	[RTCLCMTD] [smallint] NOT NULL,
+	[ORIGAMT] [numeric](19, 5) NOT NULL,
+	[NOTEINDX] [numeric](19, 5) NOT NULL,
+	[NC_Match_Number] [int] NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[NC_Marked] [tinyint] NOT NULL,
+	[NC_Matched] [tinyint] NOT NULL,
+	[NC_Sequence_Number] [int] NOT NULL,
+	[RECONUM] [numeric](19, 5) NOT NULL,
+	[NC_Reconciled_Date] [datetime] NOT NULL,
+	[NC_Originating_Trx] [smallint] NOT NULL,
+	[NCReconcileJournal] [int] NOT NULL,
+	[NC_Bank_Amount] [numeric](19, 5) NOT NULL,
+	[NC_MC_Def_1] [char](15) NOT NULL,
+	[NC_MC_Def_2] [smallint] NOT NULL,
+	[NC_MC_Def_3] [char](15) NOT NULL,
+	[NC_MC_Def_4] [char](15) NOT NULL,
+	[NC_MC_Def_5] [numeric](19, 7) NOT NULL,
+	[NC_MC_Def_6] [datetime] NOT NULL,
+	[NC_MC_Def_7] [smallint] NOT NULL,
+	[NC_MC_Def_8] [datetime] NOT NULL,
+	[NC_MC_Def_9] [smallint] NOT NULL,
+	[NC_MC_Def_10] [smallint] NOT NULL,
+	[NC_MC_Def_11] [smallint] NOT NULL,
+	[NC_MC_Def_12] [datetime] NOT NULL,
+	[NC_MC_Def_13] [numeric](19, 7) NOT NULL,
+	[NC_MC_Def_14] [smallint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR019] PRIMARY KEY NONCLUSTERED 
+(
+	[BANKID] ASC,
+	[NC_Sequence_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR203]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR203](
+	[Format_ID] [char](31) NOT NULL,
+	[LNSEQNBR] [numeric](19, 5) NOT NULL,
+	[NC_End] [smallint] NOT NULL,
+	[NC_Start] [smallint] NOT NULL,
+	[Field_Number] [smallint] NOT NULL,
+	[Format_Option] [char](21) NOT NULL,
+	[Format_Field] [char](31) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR203] PRIMARY KEY CLUSTERED 
+(
+	[Format_ID] ASC,
+	[LNSEQNBR] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR202]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR202](
+	[Format_ID] [char](31) NOT NULL,
+	[Format_Description] [char](51) NOT NULL,
+	[NOTEINDX] [numeric](19, 5) NOT NULL,
+	[File_Format] [smallint] NOT NULL,
+	[Skip_Rows] [smallint] NOT NULL,
+	[NC_Skip_FTR_Rows] [smallint] NOT NULL,
+	[Pathname] [char](255) NOT NULL,
+	[Require_Bank_ID] [tinyint] NOT NULL,
+	[NC_Signed] [tinyint] NOT NULL,
+	[Exclude] [tinyint] NOT NULL,
+	[Exclude_String] [char](21) NOT NULL,
+	[NC_Type_Present] [tinyint] NOT NULL,
+	[NC_Field_Separator] [char](11) NOT NULL,
+	[NC_Field_Delimiter] [char](3) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR202] PRIMARY KEY CLUSTERED 
+(
+	[Format_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR004]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR004](
+	[NC_Extract_Setup_Option] [char](15) NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[NC_From_Bank_ID] [char](15) NOT NULL,
+	[NC_To_Bank_ID] [char](15) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR004] PRIMARY KEY NONCLUSTERED 
+(
+	[NC_Extract_Setup_Option] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR201]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR201](
+	[OPENYEAR] [smallint] NOT NULL,
+	[JRNENTRY] [int] NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[RCTRXSEQ] [numeric](19, 5) NOT NULL,
+	[SEQNUMBR] [int] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR201] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC,
+	[OPENYEAR] ASC,
+	[JRNENTRY] ASC,
+	[RCTRXSEQ] ASC,
+	[SEQNUMBR] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR301]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR301](
+	[OPENYEAR] [smallint] NOT NULL,
+	[JRNENTRY] [int] NOT NULL,
+	[RCTRXSEQ] [numeric](19, 5) NOT NULL,
+	[TRXDATE] [datetime] NOT NULL,
+	[ACTINDX] [int] NOT NULL,
+	[SEQNUMBR] [int] NOT NULL,
+	[CURNCYID] [char](15) NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[DEBITAMT] [numeric](19, 5) NOT NULL,
+	[CRDTAMNT] [numeric](19, 5) NOT NULL,
+	[ORCTRNUM] [char](21) NOT NULL,
+	[ORDOCNUM] [char](21) NOT NULL,
+	[ORMSTRID] [char](31) NOT NULL,
+	[ORGNTSRC] [char](15) NOT NULL,
+	[ORTRXSRC] [char](13) NOT NULL,
+	[ORTRXTYP] [smallint] NOT NULL,
+	[ORGNATYP] [smallint] NOT NULL,
+	[XCHGRATE] [numeric](19, 7) NOT NULL,
+	[EXGTBLID] [char](15) NOT NULL,
+	[RTCLCMTD] [smallint] NOT NULL,
+	[RATETPID] [char](15) NOT NULL,
+	[DENXRATE] [numeric](19, 7) NOT NULL,
+	[MCTRXSTT] [smallint] NOT NULL,
+	[MKTOPROC] [tinyint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR301] PRIMARY KEY NONCLUSTERED 
+(
+	[OPENYEAR] ASC,
+	[JRNENTRY] ASC,
+	[BANKID] ASC,
+	[RCTRXSEQ] ASC,
+	[SEQNUMBR] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR302]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR302](
+	[OPENYEAR] [smallint] NOT NULL,
+	[JRNENTRY] [int] NOT NULL,
+	[RCTRXSEQ] [numeric](19, 5) NOT NULL,
+	[TRXDATE] [datetime] NOT NULL,
+	[ACTINDX] [int] NOT NULL,
+	[SEQNUMBR] [int] NOT NULL,
+	[CURNCYID] [char](15) NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[DEBITAMT] [numeric](19, 5) NOT NULL,
+	[CRDTAMNT] [numeric](19, 5) NOT NULL,
+	[ORCTRNUM] [char](21) NOT NULL,
+	[ORDOCNUM] [char](21) NOT NULL,
+	[ORMSTRID] [char](31) NOT NULL,
+	[ORGNTSRC] [char](15) NOT NULL,
+	[ORTRXSRC] [char](13) NOT NULL,
+	[ORTRXTYP] [smallint] NOT NULL,
+	[ORGNATYP] [smallint] NOT NULL,
+	[XCHGRATE] [numeric](19, 7) NOT NULL,
+	[EXGTBLID] [char](15) NOT NULL,
+	[RTCLCMTD] [smallint] NOT NULL,
+	[RATETPID] [char](15) NOT NULL,
+	[DENXRATE] [numeric](19, 7) NOT NULL,
+	[MCTRXSTT] [smallint] NOT NULL,
+	[MKTOPROC] [tinyint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR302] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC,
+	[OPENYEAR] ASC,
+	[JRNENTRY] ASC,
+	[RCTRXSEQ] ASC,
+	[SEQNUMBR] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR208]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR208](
+	[OPENYEAR] [smallint] NOT NULL,
+	[depositnumber] [char](21) NOT NULL,
+	[JRNENTRY] [int] NOT NULL,
+	[RCTRXSEQ] [numeric](19, 5) NOT NULL,
+	[SOURCDOC] [char](11) NOT NULL,
+	[REFRENCE] [char](31) NOT NULL,
+	[DSCRIPTN] [char](31) NOT NULL,
+	[TRXDATE] [datetime] NOT NULL,
+	[TRXSORCE] [char](13) NOT NULL,
+	[ACTINDX] [int] NOT NULL,
+	[TRXAMNT] [numeric](19, 5) NOT NULL,
+	[POLLDTRX] [tinyint] NOT NULL,
+	[LASTUSER] [char](15) NOT NULL,
+	[LSTDTEDT] [datetime] NOT NULL,
+	[USWHPSTD] [char](15) NOT NULL,
+	[ORGNTSRC] [char](15) NOT NULL,
+	[ORGNATYP] [smallint] NOT NULL,
+	[QKOFSET] [smallint] NOT NULL,
+	[SERIES] [smallint] NOT NULL,
+	[ORTRXTYP] [smallint] NOT NULL,
+	[ORCTRNUM] [char](21) NOT NULL,
+	[ORMSTRID] [char](31) NOT NULL,
+	[ORMSTRNM] [char](65) NOT NULL,
+	[ORDOCNUM] [char](21) NOT NULL,
+	[ORPSTDDT] [datetime] NOT NULL,
+	[ORTRXSRC] [char](13) NOT NULL,
+	[CURNCYID] [char](15) NOT NULL,
+	[CURRNIDX] [smallint] NOT NULL,
+	[RATETPID] [char](15) NOT NULL,
+	[EXGTBLID] [char](15) NOT NULL,
+	[XCHGRATE] [numeric](19, 7) NOT NULL,
+	[EXCHDATE] [datetime] NOT NULL,
+	[TIME1] [datetime] NOT NULL,
+	[RTCLCMTD] [smallint] NOT NULL,
+	[ORIGAMT] [numeric](19, 5) NOT NULL,
+	[NOTEINDX] [numeric](19, 5) NOT NULL,
+	[NC_Match_Number] [int] NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[NC_Marked] [tinyint] NOT NULL,
+	[NC_Matched] [tinyint] NOT NULL,
+	[NC_Sequence_Number] [int] NOT NULL,
+	[NC_Bank_Amount] [numeric](19, 5) NOT NULL,
+	[NC_MC_Def_1] [char](15) NOT NULL,
+	[NC_MC_Def_2] [smallint] NOT NULL,
+	[NC_MC_Def_3] [char](15) NOT NULL,
+	[NC_MC_Def_4] [char](15) NOT NULL,
+	[NC_MC_Def_5] [numeric](19, 7) NOT NULL,
+	[NC_MC_Def_6] [datetime] NOT NULL,
+	[NC_MC_Def_7] [smallint] NOT NULL,
+	[NC_MC_Def_8] [datetime] NOT NULL,
+	[NC_MC_Def_9] [smallint] NOT NULL,
+	[NC_MC_Def_10] [smallint] NOT NULL,
+	[NC_MC_Def_11] [smallint] NOT NULL,
+	[NC_MC_Def_12] [datetime] NOT NULL,
+	[NC_MC_Def_13] [numeric](19, 7) NOT NULL,
+	[NC_MC_Def_14] [smallint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR208] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC,
+	[depositnumber] ASC,
+	[NC_Sequence_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR207]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR207](
+	[BANKID] [char](15) NOT NULL,
+	[depositnumber] [char](21) NOT NULL,
+	[NC_Sequence_Number] [int] NOT NULL,
+	[DepAmt] [numeric](19, 5) NOT NULL,
+	[Originating_Deposit_Amou] [numeric](19, 5) NOT NULL,
+	[TRXDATE] [datetime] NOT NULL,
+	[RECONFLG] [tinyint] NOT NULL,
+	[NOTEINDX] [numeric](19, 5) NOT NULL,
+	[CURNCYID] [char](15) NOT NULL,
+	[CURRNIDX] [smallint] NOT NULL,
+	[CHKSTOT] [numeric](19, 5) NOT NULL,
+	[CHKCOUNT] [smallint] NOT NULL,
+	[CRCRDAMT] [numeric](19, 5) NOT NULL,
+	[CCARDCNT] [smallint] NOT NULL,
+	[CASHAMNT] [numeric](19, 5) NOT NULL,
+	[CASHCOUNT] [smallint] NOT NULL,
+	[CnAmt] [numeric](19, 5) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR207] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC,
+	[RECONFLG] ASC,
+	[depositnumber] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR008]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR008](
+	[BANKID] [char](15) NOT NULL,
+	[NC_Statement_Number] [int] NOT NULL,
+	[NC_Statement_Date] [datetime] NOT NULL,
+	[NC_Trx_Date] [datetime] NOT NULL,
+	[NC_Reference] [char](31) NOT NULL,
+	[NC_Trx_Type] [char](9) NOT NULL,
+	[NC_Debit_Amount] [numeric](19, 5) NOT NULL,
+	[NC_Credit_Amount] [numeric](19, 5) NOT NULL,
+	[NC_Trx_Balance] [numeric](19, 5) NOT NULL,
+	[NC_BL_Amount] [numeric](19, 5) NOT NULL,
+	[NCCHQNUM] [char](21) NOT NULL,
+	[NC_Reconcile_Error] [tinyint] NOT NULL,
+	[NC_Original_Trx_Type] [char](11) NOT NULL,
+	[LNITMSEQ] [int] NOT NULL,
+	[CURRNIDX] [smallint] NOT NULL,
+	[NC_Bank_Amount] [numeric](19, 5) NOT NULL,
+	[NC_Text_Reference] [char](255) NOT NULL,
+	[NC_External_ID] [char](41) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR008] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC,
+	[NC_Trx_Date] ASC,
+	[NC_Trx_Type] ASC,
+	[NC_Reference] ASC,
+	[NC_BL_Amount] ASC,
+	[NCCHQNUM] ASC,
+	[LNITMSEQ] ASC,
+	[NC_Statement_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR007]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR007](
+	[BANKID] [char](15) NOT NULL,
+	[NC_Statement_Number] [int] NOT NULL,
+	[NC_Statement_Date] [datetime] NOT NULL,
+	[NC_Statement_Starting_Ba] [numeric](19, 5) NOT NULL,
+	[NC_Statement_Ending_Bala] [numeric](19, 5) NOT NULL,
+	[NC_Last_Statement_Number] [int] NOT NULL,
+	[NC_Last_Statement_Date] [datetime] NOT NULL,
+	[NC_Last_Statement_Balanc] [numeric](19, 5) NOT NULL,
+	[NC_Ending_Balance] [numeric](19, 5) NOT NULL,
+	[NC_Reconcile_Error] [tinyint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR007] PRIMARY KEY NONCLUSTERED 
+(
+	[BANKID] ASC,
+	[NC_Statement_Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR001]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR001](
+	[BANKID] [char](15) NOT NULL,
+	[BNKACTNM] [char](15) NOT NULL,
+	[NC_Sort_Code] [char](21) NOT NULL,
+	[BANKNAME] [char](31) NOT NULL,
+	[BANKNMBR] [char](15) NOT NULL,
+	[NC_Description] [char](31) NOT NULL,
+	[CURNCYID] [char](15) NOT NULL,
+	[NC_Account_Holder] [char](31) NOT NULL,
+	[ADDRESS1] [char](61) NOT NULL,
+	[ADDRESS2] [char](61) NOT NULL,
+	[CITY] [char](35) NOT NULL,
+	[STATE] [char](29) NOT NULL,
+	[ZIPCODE] [char](11) NOT NULL,
+	[NC_Related_Checkbook_ID] [char](15) NOT NULL,
+	[NC_Last_Statement_Number] [int] NOT NULL,
+	[NC_Last_Statement_Date] [datetime] NOT NULL,
+	[NC_Last_Statement_Balanc] [numeric](19, 5) NOT NULL,
+	[NC_Last_Reconciled_Date] [datetime] NOT NULL,
+	[NC_Last_Reconciled_Balan] [numeric](19, 5) NOT NULL,
+	[NC_GL_Account_Index] [int] NOT NULL,
+	[NC_Reconciled_Account_In] [int] NOT NULL,
+	[NOTEINDX] [numeric](19, 5) NOT NULL,
+	[NC_Statement_Currency_ID] [char](15) NOT NULL,
+	[NC_AutoExtractOptions] [smallint] NOT NULL,
+	[NC_Bank_Trx_Module] [smallint] NOT NULL,
+	[NC_ConsolidateByTrxType] [tinyint] NOT NULL,
+	[NC_Virtual_Bank] [tinyint] NOT NULL,
+	[NC_Exclude_Mass_Reconcil] [tinyint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR001] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR002]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR002](
+	[BANKID] [char](15) NOT NULL,
+	[BANKNMBR] [char](15) NOT NULL,
+	[NC_Other_GL_Index] [int] NOT NULL,
+	[NC_Other_Reconciled_Inde] [int] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR002] PRIMARY KEY CLUSTERED 
+(
+	[BANKID] ASC,
+	[NC_Other_GL_Index] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR018]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR018](
+	[USERID] [char](15) NOT NULL,
+	[NC_Reconciled_Date] [datetime] NOT NULL,
+	[RECONUM] [numeric](19, 5) NOT NULL,
+	[BANKID] [char](15) NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR018] PRIMARY KEY NONCLUSTERED 
+(
+	[USERID] ASC,
+	[NC_Reconciled_Date] ASC,
+	[RECONUM] ASC,
+	[BANKID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR204]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR204](
+	[Format_ID] [char](31) NOT NULL,
+	[LNSEQNBR] [numeric](19, 5) NOT NULL,
+	[NC_Transaction_Type] [char](5) NOT NULL,
+	[NC_Cred_Deb] [smallint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR204] PRIMARY KEY CLUSTERED 
+(
+	[Format_ID] ASC,
+	[LNSEQNBR] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[NCABR212]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[NCABR212](
+	[ACTINDX] [int] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR212] PRIMARY KEY CLUSTERED 
+(
+	[ACTINDX] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+/****** Object:  Table [dbo].[NCABR303]    Script Date: 2/25/2021 10:52:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NCABR303](
+	[SETUPKEY] [smallint] NOT NULL,
+	[NC_TDC_Option] [smallint] NOT NULL,
+	[NC_SETP_INT1] [smallint] NOT NULL,
+	[NC_SETP_INT2] [smallint] NOT NULL,
+	[NC_SETP_INT3] [smallint] NOT NULL,
+	[NC_SETP_INT4] [smallint] NOT NULL,
+	[NC_SETP_INT5] [smallint] NOT NULL,
+	[NC_SETP_BOOL1] [tinyint] NOT NULL,
+	[NC_SETP_BOOL2] [tinyint] NOT NULL,
+	[NC_SETP_BOOL3] [tinyint] NOT NULL,
+	[NC_SETP_BOOL4] [tinyint] NOT NULL,
+	[NC_SETP_BOOL5] [tinyint] NOT NULL,
+	[NC_SETP_BOOL6] [tinyint] NOT NULL,
+	[NC_SETP_BOOL7] [tinyint] NOT NULL,
+	[NC_SETP_BOOL8] [tinyint] NOT NULL,
+	[NC_SETP_BOOL9] [tinyint] NOT NULL,
+	[NC_SETP_STR1] [char](31) NOT NULL,
+	[NC_SETP_STR2] [char](31) NOT NULL,
+	[NC_SETP_STR3] [char](31) NOT NULL,
+	[NC_SETP_STR4] [char](31) NOT NULL,
+	[NC_SETP_STR5] [char](31) NOT NULL,
+	[NC_Tolerance_Percent] [smallint] NOT NULL,
+	[NC_Tolerance_Value] [numeric](19, 5) NOT NULL,
+	[NC_Tolerance_Acct_STR] [char](129) NOT NULL,
+	[NC_Ageing_Descriptions_1] [char](101) NOT NULL,
+	[NC_Ageing_Descriptions_2] [char](101) NOT NULL,
+	[NC_Ageing_Descriptions_3] [char](101) NOT NULL,
+	[NC_Ageing_Descriptions_4] [char](101) NOT NULL,
+	[NC_Ageing_Descriptions_5] [char](101) NOT NULL,
+	[NC_Ageing_Descriptions_6] [char](101) NOT NULL,
+	[NC_Ageing_Descriptions_7] [char](101) NOT NULL,
+	[NC_Ageing_Periods_1] [int] NOT NULL,
+	[NC_Ageing_Periods_2] [int] NOT NULL,
+	[NC_Ageing_Periods_3] [int] NOT NULL,
+	[NC_Ageing_Periods_4] [int] NOT NULL,
+	[NC_Ageing_Periods_5] [int] NOT NULL,
+	[NC_Ageing_Periods_6] [int] NOT NULL,
+	[NC_Ageing_Periods_7] [int] NOT NULL,
+	[NC_Reference_Source] [smallint] NOT NULL,
+	[NC_Extract_Summary_Trxs_] [tinyint] NOT NULL,
+	[NC_Extract_Date_Range] [smallint] NOT NULL,
+	[NC_Extract_SaveBankRange] [tinyint] NOT NULL,
+	[DEX_ROW_ID] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PKNCABR303] PRIMARY KEY CLUSTERED 
+(
+	[SETUPKEY] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[NCABR501]  WITH CHECK ADD CHECK  ((datepart(day,[NC_TaskStartTime])=(1) AND datepart(month,[NC_TaskStartTime])=(1) AND datepart(year,[NC_TaskStartTime])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR501]  WITH CHECK ADD CHECK  ((datepart(day,[NC_TaskFinishTime])=(1) AND datepart(month,[NC_TaskFinishTime])=(1) AND datepart(year,[NC_TaskFinishTime])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR501]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_TaskLastRunDate])=(0) AND datepart(minute,[NC_TaskLastRunDate])=(0) AND datepart(second,[NC_TaskLastRunDate])=(0) AND datepart(millisecond,[NC_TaskLastRunDate])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR501]  WITH CHECK ADD CHECK  ((datepart(day,[NC_TaskLastRunTime])=(1) AND datepart(month,[NC_TaskLastRunTime])=(1) AND datepart(year,[NC_TaskLastRunTime])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR222]  WITH CHECK ADD CHECK  ((datepart(hour,[DATE1])=(0) AND datepart(minute,[DATE1])=(0) AND datepart(second,[DATE1])=(0) AND datepart(millisecond,[DATE1])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR222]  WITH CHECK ADD CHECK  ((datepart(day,[TIME1])=(1) AND datepart(month,[TIME1])=(1) AND datepart(year,[TIME1])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR412]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Date8])=(0) AND datepart(minute,[NC_Date8])=(0) AND datepart(second,[NC_Date8])=(0) AND datepart(millisecond,[NC_Date8])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR323]  WITH CHECK ADD CHECK  ((datepart(hour,[TRXDATE])=(0) AND datepart(minute,[TRXDATE])=(0) AND datepart(second,[TRXDATE])=(0) AND datepart(millisecond,[TRXDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR322]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Trx_Date])=(0) AND datepart(minute,[NC_Trx_Date])=(0) AND datepart(second,[NC_Trx_Date])=(0) AND datepart(millisecond,[NC_Trx_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR309]  WITH CHECK ADD CHECK  ((datepart(hour,[TRXDATE])=(0) AND datepart(minute,[TRXDATE])=(0) AND datepart(second,[TRXDATE])=(0) AND datepart(millisecond,[TRXDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR041]  WITH CHECK ADD CHECK  ((datepart(hour,[TRXDATE])=(0) AND datepart(minute,[TRXDATE])=(0) AND datepart(second,[TRXDATE])=(0) AND datepart(millisecond,[TRXDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR321]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Balance_Date])=(0) AND datepart(minute,[NC_Balance_Date])=(0) AND datepart(second,[NC_Balance_Date])=(0) AND datepart(millisecond,[NC_Balance_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR321]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_End_Of_Month])=(0) AND datepart(minute,[NC_End_Of_Month])=(0) AND datepart(second,[NC_End_Of_Month])=(0) AND datepart(millisecond,[NC_End_Of_Month])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR321]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Reconciled_Date])=(0) AND datepart(minute,[NC_Reconciled_Date])=(0) AND datepart(second,[NC_Reconciled_Date])=(0) AND datepart(millisecond,[NC_Reconciled_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR321]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Start_Of_Month])=(0) AND datepart(minute,[NC_Start_Of_Month])=(0) AND datepart(second,[NC_Start_Of_Month])=(0) AND datepart(millisecond,[NC_Start_Of_Month])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR320]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Statement_Date])=(0) AND datepart(minute,[NC_Statement_Date])=(0) AND datepart(second,[NC_Statement_Date])=(0) AND datepart(millisecond,[NC_Statement_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR317]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Trx_Date])=(0) AND datepart(minute,[NC_Trx_Date])=(0) AND datepart(second,[NC_Trx_Date])=(0) AND datepart(millisecond,[NC_Trx_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR317]  WITH CHECK ADD CHECK  ((datepart(hour,[TRXDATE])=(0) AND datepart(minute,[TRXDATE])=(0) AND datepart(second,[TRXDATE])=(0) AND datepart(millisecond,[TRXDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR308]  WITH CHECK ADD CHECK  ((datepart(hour,[Date8])=(0) AND datepart(minute,[Date8])=(0) AND datepart(second,[Date8])=(0) AND datepart(millisecond,[Date8])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR308]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Reconciled_Date])=(0) AND datepart(minute,[NC_Reconciled_Date])=(0) AND datepart(second,[NC_Reconciled_Date])=(0) AND datepart(millisecond,[NC_Reconciled_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR314]  WITH CHECK ADD CHECK  ((datepart(hour,[DOCDATE])=(0) AND datepart(minute,[DOCDATE])=(0) AND datepart(second,[DOCDATE])=(0) AND datepart(millisecond,[DOCDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR314]  WITH CHECK ADD CHECK  ((datepart(hour,[EXCHDATE])=(0) AND datepart(minute,[EXCHDATE])=(0) AND datepart(second,[EXCHDATE])=(0) AND datepart(millisecond,[EXCHDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR314]  WITH CHECK ADD CHECK  ((datepart(hour,[LSTDTEDT])=(0) AND datepart(minute,[LSTDTEDT])=(0) AND datepart(second,[LSTDTEDT])=(0) AND datepart(millisecond,[LSTDTEDT])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR314]  WITH CHECK ADD CHECK  ((datepart(hour,[ORPSTDDT])=(0) AND datepart(minute,[ORPSTDDT])=(0) AND datepart(second,[ORPSTDDT])=(0) AND datepart(millisecond,[ORPSTDDT])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR314]  WITH CHECK ADD CHECK  ((datepart(day,[TIME1])=(1) AND datepart(month,[TIME1])=(1) AND datepart(year,[TIME1])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR314]  WITH CHECK ADD CHECK  ((datepart(hour,[TRXDATE])=(0) AND datepart(minute,[TRXDATE])=(0) AND datepart(second,[TRXDATE])=(0) AND datepart(millisecond,[TRXDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR035]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Trx_Date])=(0) AND datepart(minute,[NC_Trx_Date])=(0) AND datepart(second,[NC_Trx_Date])=(0) AND datepart(millisecond,[NC_Trx_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR304]  WITH CHECK ADD CHECK  ((datepart(hour,[EXCHDATE])=(0) AND datepart(minute,[EXCHDATE])=(0) AND datepart(second,[EXCHDATE])=(0) AND datepart(millisecond,[EXCHDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR304]  WITH CHECK ADD CHECK  ((datepart(hour,[LSTDTEDT])=(0) AND datepart(minute,[LSTDTEDT])=(0) AND datepart(second,[LSTDTEDT])=(0) AND datepart(millisecond,[LSTDTEDT])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR304]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_MC_Def_6])=(0) AND datepart(minute,[NC_MC_Def_6])=(0) AND datepart(second,[NC_MC_Def_6])=(0) AND datepart(millisecond,[NC_MC_Def_6])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR304]  WITH CHECK ADD CHECK  ((datepart(day,[NC_MC_Def_8])=(1) AND datepart(month,[NC_MC_Def_8])=(1) AND datepart(year,[NC_MC_Def_8])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR304]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_MC_Def_12])=(0) AND datepart(minute,[NC_MC_Def_12])=(0) AND datepart(second,[NC_MC_Def_12])=(0) AND datepart(millisecond,[NC_MC_Def_12])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR304]  WITH CHECK ADD CHECK  ((datepart(hour,[ORPSTDDT])=(0) AND datepart(minute,[ORPSTDDT])=(0) AND datepart(second,[ORPSTDDT])=(0) AND datepart(millisecond,[ORPSTDDT])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR304]  WITH CHECK ADD CHECK  ((datepart(day,[TIME1])=(1) AND datepart(month,[TIME1])=(1) AND datepart(year,[TIME1])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR304]  WITH CHECK ADD CHECK  ((datepart(hour,[TRXDATE])=(0) AND datepart(minute,[TRXDATE])=(0) AND datepart(second,[TRXDATE])=(0) AND datepart(millisecond,[TRXDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR011]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Statement_Date])=(0) AND datepart(minute,[NC_Statement_Date])=(0) AND datepart(second,[NC_Statement_Date])=(0) AND datepart(millisecond,[NC_Statement_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR011]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Trx_Date])=(0) AND datepart(minute,[NC_Trx_Date])=(0) AND datepart(second,[NC_Trx_Date])=(0) AND datepart(millisecond,[NC_Trx_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR020]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Reconciled_Date])=(0) AND datepart(minute,[NC_Reconciled_Date])=(0) AND datepart(second,[NC_Reconciled_Date])=(0) AND datepart(millisecond,[NC_Reconciled_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR020]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Statement_Date])=(0) AND datepart(minute,[NC_Statement_Date])=(0) AND datepart(second,[NC_Statement_Date])=(0) AND datepart(millisecond,[NC_Statement_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR020]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Trx_Date])=(0) AND datepart(minute,[NC_Trx_Date])=(0) AND datepart(second,[NC_Trx_Date])=(0) AND datepart(millisecond,[NC_Trx_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR029]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Last_Statement_Date])=(0) AND datepart(minute,[NC_Last_Statement_Date])=(0) AND datepart(second,[NC_Last_Statement_Date])=(0) AND datepart(millisecond,[NC_Last_Statement_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR029]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Statement_Date])=(0) AND datepart(minute,[NC_Statement_Date])=(0) AND datepart(second,[NC_Statement_Date])=(0) AND datepart(millisecond,[NC_Statement_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR205]  WITH CHECK ADD CHECK  ((datepart(hour,[ENDDATE])=(0) AND datepart(minute,[ENDDATE])=(0) AND datepart(second,[ENDDATE])=(0) AND datepart(millisecond,[ENDDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR205]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Spare_End_Date])=(0) AND datepart(minute,[NC_Spare_End_Date])=(0) AND datepart(second,[NC_Spare_End_Date])=(0) AND datepart(millisecond,[NC_Spare_End_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR205]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Spare_Start_Date])=(0) AND datepart(minute,[NC_Spare_Start_Date])=(0) AND datepart(second,[NC_Spare_Start_Date])=(0) AND datepart(millisecond,[NC_Spare_Start_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR205]  WITH CHECK ADD CHECK  ((datepart(hour,[STRTDATE])=(0) AND datepart(minute,[STRTDATE])=(0) AND datepart(second,[STRTDATE])=(0) AND datepart(millisecond,[STRTDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR305]  WITH CHECK ADD CHECK  ((datepart(hour,[DOCDATE])=(0) AND datepart(minute,[DOCDATE])=(0) AND datepart(second,[DOCDATE])=(0) AND datepart(millisecond,[DOCDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR305]  WITH CHECK ADD CHECK  ((datepart(hour,[EXCHDATE])=(0) AND datepart(minute,[EXCHDATE])=(0) AND datepart(second,[EXCHDATE])=(0) AND datepart(millisecond,[EXCHDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR305]  WITH CHECK ADD CHECK  ((datepart(hour,[LSTDTEDT])=(0) AND datepart(minute,[LSTDTEDT])=(0) AND datepart(second,[LSTDTEDT])=(0) AND datepart(millisecond,[LSTDTEDT])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR305]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_MC_Def_6])=(0) AND datepart(minute,[NC_MC_Def_6])=(0) AND datepart(second,[NC_MC_Def_6])=(0) AND datepart(millisecond,[NC_MC_Def_6])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR305]  WITH CHECK ADD CHECK  ((datepart(day,[NC_MC_Def_8])=(1) AND datepart(month,[NC_MC_Def_8])=(1) AND datepart(year,[NC_MC_Def_8])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR305]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_MC_Def_12])=(0) AND datepart(minute,[NC_MC_Def_12])=(0) AND datepart(second,[NC_MC_Def_12])=(0) AND datepart(millisecond,[NC_MC_Def_12])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR305]  WITH CHECK ADD CHECK  ((datepart(hour,[ORPSTDDT])=(0) AND datepart(minute,[ORPSTDDT])=(0) AND datepart(second,[ORPSTDDT])=(0) AND datepart(millisecond,[ORPSTDDT])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR305]  WITH CHECK ADD CHECK  ((datepart(day,[TIME1])=(1) AND datepart(month,[TIME1])=(1) AND datepart(year,[TIME1])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR305]  WITH CHECK ADD CHECK  ((datepart(hour,[TRXDATE])=(0) AND datepart(minute,[TRXDATE])=(0) AND datepart(second,[TRXDATE])=(0) AND datepart(millisecond,[TRXDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR026]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_MC_Def_6])=(0) AND datepart(minute,[NC_MC_Def_6])=(0) AND datepart(second,[NC_MC_Def_6])=(0) AND datepart(millisecond,[NC_MC_Def_6])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR026]  WITH CHECK ADD CHECK  ((datepart(day,[NC_MC_Def_8])=(1) AND datepart(month,[NC_MC_Def_8])=(1) AND datepart(year,[NC_MC_Def_8])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR026]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_MC_Def_12])=(0) AND datepart(minute,[NC_MC_Def_12])=(0) AND datepart(second,[NC_MC_Def_12])=(0) AND datepart(millisecond,[NC_MC_Def_12])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR026]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Reconciled_Date])=(0) AND datepart(minute,[NC_Reconciled_Date])=(0) AND datepart(second,[NC_Reconciled_Date])=(0) AND datepart(millisecond,[NC_Reconciled_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR026]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Trx_Date])=(0) AND datepart(minute,[NC_Trx_Date])=(0) AND datepart(second,[NC_Trx_Date])=(0) AND datepart(millisecond,[NC_Trx_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR026]  WITH CHECK ADD CHECK  ((datepart(hour,[TRXDATE])=(0) AND datepart(minute,[TRXDATE])=(0) AND datepart(second,[TRXDATE])=(0) AND datepart(millisecond,[TRXDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR022]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_MC_Def_6])=(0) AND datepart(minute,[NC_MC_Def_6])=(0) AND datepart(second,[NC_MC_Def_6])=(0) AND datepart(millisecond,[NC_MC_Def_6])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR022]  WITH CHECK ADD CHECK  ((datepart(day,[NC_MC_Def_8])=(1) AND datepart(month,[NC_MC_Def_8])=(1) AND datepart(year,[NC_MC_Def_8])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR022]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_MC_Def_12])=(0) AND datepart(minute,[NC_MC_Def_12])=(0) AND datepart(second,[NC_MC_Def_12])=(0) AND datepart(millisecond,[NC_MC_Def_12])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR022]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Reconciled_Date])=(0) AND datepart(minute,[NC_Reconciled_Date])=(0) AND datepart(second,[NC_Reconciled_Date])=(0) AND datepart(millisecond,[NC_Reconciled_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR022]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Trx_Date])=(0) AND datepart(minute,[NC_Trx_Date])=(0) AND datepart(second,[NC_Trx_Date])=(0) AND datepart(millisecond,[NC_Trx_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR022]  WITH CHECK ADD CHECK  ((datepart(hour,[TRXDATE])=(0) AND datepart(minute,[TRXDATE])=(0) AND datepart(second,[TRXDATE])=(0) AND datepart(millisecond,[TRXDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR012]  WITH CHECK ADD CHECK  ((datepart(hour,[EXCHDATE])=(0) AND datepart(minute,[EXCHDATE])=(0) AND datepart(second,[EXCHDATE])=(0) AND datepart(millisecond,[EXCHDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR012]  WITH CHECK ADD CHECK  ((datepart(hour,[LSTDTEDT])=(0) AND datepart(minute,[LSTDTEDT])=(0) AND datepart(second,[LSTDTEDT])=(0) AND datepart(millisecond,[LSTDTEDT])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR012]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_MC_Def_6])=(0) AND datepart(minute,[NC_MC_Def_6])=(0) AND datepart(second,[NC_MC_Def_6])=(0) AND datepart(millisecond,[NC_MC_Def_6])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR012]  WITH CHECK ADD CHECK  ((datepart(day,[NC_MC_Def_8])=(1) AND datepart(month,[NC_MC_Def_8])=(1) AND datepart(year,[NC_MC_Def_8])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR012]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_MC_Def_12])=(0) AND datepart(minute,[NC_MC_Def_12])=(0) AND datepart(second,[NC_MC_Def_12])=(0) AND datepart(millisecond,[NC_MC_Def_12])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR012]  WITH CHECK ADD CHECK  ((datepart(hour,[ORPSTDDT])=(0) AND datepart(minute,[ORPSTDDT])=(0) AND datepart(second,[ORPSTDDT])=(0) AND datepart(millisecond,[ORPSTDDT])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR012]  WITH CHECK ADD CHECK  ((datepart(day,[TIME1])=(1) AND datepart(month,[TIME1])=(1) AND datepart(year,[TIME1])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR012]  WITH CHECK ADD CHECK  ((datepart(hour,[TRXDATE])=(0) AND datepart(minute,[TRXDATE])=(0) AND datepart(second,[TRXDATE])=(0) AND datepart(millisecond,[TRXDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR023]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Last_Statement_Date])=(0) AND datepart(minute,[NC_Last_Statement_Date])=(0) AND datepart(second,[NC_Last_Statement_Date])=(0) AND datepart(millisecond,[NC_Last_Statement_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCBL0002]  WITH CHECK ADD CHECK  ((datepart(hour,[DATE1])=(0) AND datepart(minute,[DATE1])=(0) AND datepart(second,[DATE1])=(0) AND datepart(millisecond,[DATE1])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCBL0002]  WITH CHECK ADD CHECK  ((datepart(day,[TIME1])=(1) AND datepart(month,[TIME1])=(1) AND datepart(year,[TIME1])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR019]  WITH CHECK ADD CHECK  ((datepart(hour,[EXCHDATE])=(0) AND datepart(minute,[EXCHDATE])=(0) AND datepart(second,[EXCHDATE])=(0) AND datepart(millisecond,[EXCHDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR019]  WITH CHECK ADD CHECK  ((datepart(hour,[LSTDTEDT])=(0) AND datepart(minute,[LSTDTEDT])=(0) AND datepart(second,[LSTDTEDT])=(0) AND datepart(millisecond,[LSTDTEDT])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR019]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_MC_Def_6])=(0) AND datepart(minute,[NC_MC_Def_6])=(0) AND datepart(second,[NC_MC_Def_6])=(0) AND datepart(millisecond,[NC_MC_Def_6])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR019]  WITH CHECK ADD CHECK  ((datepart(day,[NC_MC_Def_8])=(1) AND datepart(month,[NC_MC_Def_8])=(1) AND datepart(year,[NC_MC_Def_8])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR019]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_MC_Def_12])=(0) AND datepart(minute,[NC_MC_Def_12])=(0) AND datepart(second,[NC_MC_Def_12])=(0) AND datepart(millisecond,[NC_MC_Def_12])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR019]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Reconciled_Date])=(0) AND datepart(minute,[NC_Reconciled_Date])=(0) AND datepart(second,[NC_Reconciled_Date])=(0) AND datepart(millisecond,[NC_Reconciled_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR019]  WITH CHECK ADD CHECK  ((datepart(hour,[ORPSTDDT])=(0) AND datepart(minute,[ORPSTDDT])=(0) AND datepart(second,[ORPSTDDT])=(0) AND datepart(millisecond,[ORPSTDDT])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR019]  WITH CHECK ADD CHECK  ((datepart(day,[TIME1])=(1) AND datepart(month,[TIME1])=(1) AND datepart(year,[TIME1])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR019]  WITH CHECK ADD CHECK  ((datepart(hour,[TRXDATE])=(0) AND datepart(minute,[TRXDATE])=(0) AND datepart(second,[TRXDATE])=(0) AND datepart(millisecond,[TRXDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR301]  WITH CHECK ADD CHECK  ((datepart(hour,[TRXDATE])=(0) AND datepart(minute,[TRXDATE])=(0) AND datepart(second,[TRXDATE])=(0) AND datepart(millisecond,[TRXDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR302]  WITH CHECK ADD CHECK  ((datepart(hour,[TRXDATE])=(0) AND datepart(minute,[TRXDATE])=(0) AND datepart(second,[TRXDATE])=(0) AND datepart(millisecond,[TRXDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR208]  WITH CHECK ADD CHECK  ((datepart(hour,[EXCHDATE])=(0) AND datepart(minute,[EXCHDATE])=(0) AND datepart(second,[EXCHDATE])=(0) AND datepart(millisecond,[EXCHDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR208]  WITH CHECK ADD CHECK  ((datepart(hour,[LSTDTEDT])=(0) AND datepart(minute,[LSTDTEDT])=(0) AND datepart(second,[LSTDTEDT])=(0) AND datepart(millisecond,[LSTDTEDT])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR208]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_MC_Def_6])=(0) AND datepart(minute,[NC_MC_Def_6])=(0) AND datepart(second,[NC_MC_Def_6])=(0) AND datepart(millisecond,[NC_MC_Def_6])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR208]  WITH CHECK ADD CHECK  ((datepart(day,[NC_MC_Def_8])=(1) AND datepart(month,[NC_MC_Def_8])=(1) AND datepart(year,[NC_MC_Def_8])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR208]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_MC_Def_12])=(0) AND datepart(minute,[NC_MC_Def_12])=(0) AND datepart(second,[NC_MC_Def_12])=(0) AND datepart(millisecond,[NC_MC_Def_12])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR208]  WITH CHECK ADD CHECK  ((datepart(hour,[ORPSTDDT])=(0) AND datepart(minute,[ORPSTDDT])=(0) AND datepart(second,[ORPSTDDT])=(0) AND datepart(millisecond,[ORPSTDDT])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR208]  WITH CHECK ADD CHECK  ((datepart(day,[TIME1])=(1) AND datepart(month,[TIME1])=(1) AND datepart(year,[TIME1])=(1900)))
+GO
+
+ALTER TABLE [dbo].[NCABR208]  WITH CHECK ADD CHECK  ((datepart(hour,[TRXDATE])=(0) AND datepart(minute,[TRXDATE])=(0) AND datepart(second,[TRXDATE])=(0) AND datepart(millisecond,[TRXDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR207]  WITH CHECK ADD CHECK  ((datepart(hour,[TRXDATE])=(0) AND datepart(minute,[TRXDATE])=(0) AND datepart(second,[TRXDATE])=(0) AND datepart(millisecond,[TRXDATE])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR008]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Statement_Date])=(0) AND datepart(minute,[NC_Statement_Date])=(0) AND datepart(second,[NC_Statement_Date])=(0) AND datepart(millisecond,[NC_Statement_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR008]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Trx_Date])=(0) AND datepart(minute,[NC_Trx_Date])=(0) AND datepart(second,[NC_Trx_Date])=(0) AND datepart(millisecond,[NC_Trx_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR007]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Last_Statement_Date])=(0) AND datepart(minute,[NC_Last_Statement_Date])=(0) AND datepart(second,[NC_Last_Statement_Date])=(0) AND datepart(millisecond,[NC_Last_Statement_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR007]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Statement_Date])=(0) AND datepart(minute,[NC_Statement_Date])=(0) AND datepart(second,[NC_Statement_Date])=(0) AND datepart(millisecond,[NC_Statement_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR001]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Last_Statement_Date])=(0) AND datepart(minute,[NC_Last_Statement_Date])=(0) AND datepart(second,[NC_Last_Statement_Date])=(0) AND datepart(millisecond,[NC_Last_Statement_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR001]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Last_Reconciled_Date])=(0) AND datepart(minute,[NC_Last_Reconciled_Date])=(0) AND datepart(second,[NC_Last_Reconciled_Date])=(0) AND datepart(millisecond,[NC_Last_Reconciled_Date])=(0)))
+GO
+
+ALTER TABLE [dbo].[NCABR018]  WITH CHECK ADD CHECK  ((datepart(hour,[NC_Reconciled_Date])=(0) AND datepart(minute,[NC_Reconciled_Date])=(0) AND datepart(second,[NC_Reconciled_Date])=(0) AND datepart(millisecond,[NC_Reconciled_Date])=(0)))
+GO
+
+
