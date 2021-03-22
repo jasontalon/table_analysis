@@ -112,7 +112,7 @@ FROM z
 		FROM ##FOR_ANALYSIS WHERE __row = @currRow		
 
 		SET @query = 
-		'SELECT [' + @MAIN_TABLE + '].* ' + CHAR(13)
+		'SELECT DISTINCT [' + @MAIN_TABLE + '].[' + @FOREIGN_KEY + ']' + CHAR(13)
 		 + 'INTO ##TABLE_ANALYSIS ' + CHAR(13)
 		 + 'FROM [' + DB_NAME() + ']..[' + @MAIN_TABLE+ '] ' + CHAR(13) +
 			 CASE
@@ -135,15 +135,15 @@ FROM z
 
 		PRINT('ROWS: ' + CONVERT(NVARCHAR(10),@row_count))
 
-		IF @row_count > 0
-		BEGIN			
-			INSERT INTO ##FOUND_RELATIONSHIP 
-				(MAIN, [FOREIGN], [PRIMARY], ROW_COUNT)
-			VALUES
-				(@MAIN_TABLE,  @FOREIGN_TABLE + '.' + @FOREIGN_KEY, @PRIMARY_TABLE +'.' + @PRIMARY_KEY, @row_count)
-		END
+		INSERT INTO ##FOUND_RELATIONSHIP 
+			(MAIN, [FOREIGN], [PRIMARY], ROW_COUNT)
+		VALUES
+			(@MAIN_TABLE,  @FOREIGN_TABLE + '.' + @FOREIGN_KEY, @PRIMARY_TABLE +'.' + @PRIMARY_KEY, @row_count)
 		
 		SET @currRow += 1
 	END
 	
 	SELECT * FROM ##FOUND_RELATIONSHIP
+	WHERE ROW_COUNT > 0
+
+	
