@@ -103,8 +103,7 @@ FROM z
 
 	WHILE @lastRow >= @currRow
 	BEGIN
-		DROP TABLE IF EXISTS ##TABLE_ANALYSIS
-		DECLARE @relationship_summary AS NVARCHAR(512) = ''
+		DROP TABLE IF EXISTS ##TABLE_ANALYSIS		
 		DECLARE @query as NVARCHAR(1000) = '';
 		DECLARE @row_count as int = 0;
 
@@ -135,12 +134,8 @@ FROM z
 				ELSE ''
 				END
 		 + 'INNER JOIN [' + DB_NAME() + ']..[' + @PRIMARY_TABLE + '] ON [' + @FOREIGN_TABLE + '].[' + @FOREIGN_KEY + '] = [' + @PRIMARY_TABLE+ '].[' + @PRIMARY_KEY + '] '
-		 
-		PRINT(CHAR(13))
-
-		SET @relationship_summary = @MAIN_TABLE + ' -> ' + @FOREIGN_TABLE + '.' + @FOREIGN_KEY + ' -> ' + @PRIMARY_TABLE +'.' + @PRIMARY_KEY
-
-		PRINT('TABLE: ' +@relationship_summary )
+		 		
+		PRINT(CHAR(13) +'TABLE: ' + @MAIN_TABLE + ' -> ' + @FOREIGN_TABLE + '.' + @FOREIGN_KEY + ' -> ' + @PRIMARY_TABLE +'.' + @PRIMARY_KEY )
 		PRINT(REPLACE(@query, 'INTO ##TABLE_ANALYSIS ' + CHAR(13), ''))
 		
 		EXEC(@query)
