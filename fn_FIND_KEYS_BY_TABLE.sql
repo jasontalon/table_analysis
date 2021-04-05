@@ -46,14 +46,14 @@ SET NOCOUNT ON;
 module_tables_primary_key as
 (
 	SELECT DISTINCT module_tables.MODULE_TABLE_NAME, 'PRIMARY' as REFERENCE, ss.PrimaryTableName as REFERENCE_TABLE_NAME, module_tables.COLUMN_NAME
-	  FROM [CompanyMerge].[dbo].[Vw_PrimaryForeignRelationshipSummary] [ss]
+	  FROM [dbo].[CompanyMerge_Vw_PrimaryForeignRelationshipSummary] [ss]
 	  INNER JOIN module_tables on  [ss].PrimaryFieldName = module_tables.COLUMN_NAME	  
 )
 ,
 module_tables_foreign_key as 
 (
 	SELECT DISTINCT module_tables.MODULE_TABLE_NAME, 'FOREIGN' as REFERENCE, ss.ForeignTableName as REFERENCE_TABLE_NAME, module_tables.COLUMN_NAME
-	  FROM [CompanyMerge].[dbo].[Vw_PrimaryForeignRelationshipSummary] [ss]
+	  FROM [dbo].[CompanyMerge_Vw_PrimaryForeignRelationshipSummary] [ss]
 	  INNER JOIN module_tables ON ss.ForeignFieldName = module_tables.COLUMN_NAME
 	  WHERE NOT EXISTS 
 		(
@@ -69,7 +69,7 @@ module_tables_foreign_key as
 	 SELECT *, NULL as PRIMARY_TABLE, NULL as PRIMARY_COLUMN FROM module_tables_primary_key
 	 UNION ALL
 	 SELECT a.*, ss.PrimaryTableName as PRIMARY_TABLE, ss.PrimaryFieldName as PRIMARY_COLUMN  FROM module_tables_foreign_key a
-		inner join [CompanyMerge].[dbo].[Vw_PrimaryForeignRelationshipSummary] [ss] ON 
+		inner join [dbo].[CompanyMerge_Vw_PrimaryForeignRelationshipSummary] [ss] ON 
 		a.REFERENCE_TABLE_NAME = ss.ForeignTableName AND a.COLUMN_NAME = ss.ForeignFieldName
  )
 SELECT DISTINCT MODULE_TABLE_NAME, 
